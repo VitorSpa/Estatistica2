@@ -1,22 +1,23 @@
 ---
-title: "Site relacionado à disciplina Estatística II Ministrada na UFES em 2019/2"
+title: "Relatório de disciplina"
 ---
 
-*Professor: Prof. Dr. Bartolomeu Zamprogno*
-*Aluno: Vitor Fontana Zanotelli*
+**Professor: Prof. Dr. Bartolomeu Zamprogno**
 
-# Mapa do site
+**Aluno: Vitor Fontana Zanotelli**
+
+## Mapa do site
 
 Neste site encontramos as seguintes seções:
 
-## Prova 1
+1. Prova 1
 
-Resolução da primeira prova da disciplina utilizando a linguagem de programação R.
+   Resolução da primeira prova da disciplina utilizando a linguagem de programação R.
 
-## Prova 2 
+2. Prova 2 
 
-Resolução da segunda prova da disciplina utilizando a linguagem de programação R.
+   Resolução da segunda prova da disciplina utilizando a linguagem de programação R.
 
-## Teorema Central do Limite
+3. Teorema Central do Limite
 
-Estudo empírico do Teorema Central do Limite através de simulações usando a linguagem de programação R.
+   Estudo empírico do Teorema Central do Limite através de simulações usando a linguagem de programação R.

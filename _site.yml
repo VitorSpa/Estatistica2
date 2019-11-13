@@ -13,5 +13,4 @@ navbar:
       href: tcl.html
 output:
   html_document:
-    theme: cosmos
-    css: 'styles.css'
+    theme: paper

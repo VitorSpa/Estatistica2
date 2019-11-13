@@ -1,7 +1,7 @@
-name: "Estat"
+name: "Estatística 2 - 2019/2"
 output_dir: "."
 navbar:
-  title: "Estat"
+  title: "Estatística 2 - 2019/2"
   left:
     - text: "Home"
       href: index.html

@@ -1,5 +1,10 @@
 ---
 title: "Estatística 2 - 2019/2"
+knit: (function(input_file, encoding) {
+  out_dir <- 'docs';
+  rmarkdown::render(input_file,
+ encoding=encoding,
+ output_file=file.path(dirname(input_file), out_dir, 'index.html'))})
 author: "Vitor Fontana Zanotelli"
 date: "13/11/2019"
 output: html_document

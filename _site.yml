@@ -1,0 +1,13 @@
+name: "Estat"
+output_dir: "."
+navbar:
+  title: "Estat"
+  left:
+    - text: "Home"
+      href: index.html
+    - text: "Prova 1"
+      href: prova1.html
+    - text: "Prova 2"
+      href: prova2.html
+    - text: "Teorema Central do Limite"
+      href: tcl.html

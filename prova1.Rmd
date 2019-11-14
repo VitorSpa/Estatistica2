@@ -39,8 +39,9 @@ C. (0.5 pt) Quão grande terá de ser a amostra se desejarmos estar no mínimo 9
 
 (2,5 pts) O consumo de bebidas alcoólicas por mulheres jovens maiores de idade vem aumentando no Reino Unido, nos Estados Unidos e na Europa (*The Wall Street Journal*, 15 de fevereiro de 2006). Dados (consumo anual em litros) consistentes com as descobertas relatadas no artigo do *The Wall Street Journal* são mostrados para uma amostra de 20 mulheres jovens europeias.
 
-|266|82|199|174|97|164|102|113|171|0|
-|170|222|115|130|169|93|0|93|110|130
+--- | --- | --- | --- | --- | --- | --- | --- | --- | --- 
+266|82|199|174|97|164|102|113|171|0
+170|222|115|130|169|93|0|93|110|130
 
 Considerando que a população é aproximadamente simétrica, construa um intervalo de confiança de 96% para o consumo médio anual de bebidas alcoólicas por mulheres jovens europeias. Informação: $\sum{X_{i}} = 2600$ e $\sum{X^2_{i}} = 419244$. Suponha que dos dados tenha distribui;'ao aproximadamente normal.
 

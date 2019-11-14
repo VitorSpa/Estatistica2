@@ -2,9 +2,13 @@
 title: "Resolução da primeira prova"
 ---
 
+---
+
 # Questão 1
 
 (1,0 pts) Se uma amostra com 36 observações for tomada de uma população, qual deve ser o tamanho de uma outra amostra para que o desvio padrão dessa amostra seja 2/3 do desvio padrão da média da primeira?
+
+---
 
 # Questão 2
 
@@ -18,3 +22,6 @@ title: "Resolução da primeira prova"
    R$ 86.250,00 ?
  
    D. (1,0 pts) Se o tamanho da amostra dobrasse, a prob. da letra **a** aumentaria ou diminuiria ? E da letra **c** ?
+   
+---
+

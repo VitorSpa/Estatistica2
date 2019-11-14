@@ -6,7 +6,22 @@ title: "Resolução da primeira prova"
 
 # Questão 1
 
-(1,0 pt) Se uma amostra com 36 observações for tomada de uma população, qual deve ser o tamanho de uma outra amostra para que o desvio padrão dessa amostra seja 2/3 do desvio padrão da média da primeira?
+(1,0 pt) Se uma amostra com 36 observações for tomada de uma população, qual deve ser o tamanho de uma outra amostra para que o desvio padrão dessa amostra seja $\frac{2}{3}$ do desvio padrão da média da primeira?
+
+## Solução
+
+$$(I)\ a_{1}: n_{1} = 36 \ \ \  \sigma_{\bar{x}_{1}} = \frac{\sigma}{\sqrt{n_{1}}} \\ (II)\ a_{2}:n_{2} = ??? \ \ \  \sigma_{\bar{x}_{2}} = \frac{\sigma}{\sqrt{n_{2}}}$$
+
+Como o desvio padrão da segunda amostra deve ser $\frac{2}{3}$ do desvio padrão da primeira amostra temos:
+
+$$(III)\ \sigma_{\bar{x}_{2}} = \frac{2}{3} \sigma_{\bar{x}_{1}} $$
+
+Substituindo **I** e **II** em **III**:
+
+$$\sigma_{\bar{x}_{2}} = \frac{2}{3} \sigma_{\bar{x}_{1}} \\ 
+  \frac{\sigma}{\sqrt{n_{2}}} = \frac{2}{3} \frac{\sigma}{\sqrt{n_{1}}} \\
+  \sqrt{n_{2}} = \sqrt{36} \frac{3}{2} \\
+  n_{2} = 81$$
 
 # Questão 2
 
@@ -20,6 +35,8 @@ C. (1,0 pt) Depois de ter respostas às duas primeiras perguntas, o gerente da i
  
 D. (1,0 pt) Se o tamanho da amostra dobrasse, a prob. da letra **a** aumentaria ou diminuiria ? E da letra **c** ?
 
+## Solução
+
 # Questão 3
 
 (1,0 pt) O número de divórcios por indivíduo adulto casado, em certa comunidade, foi modelado pela variável aleatória $D$, cuja função de probabilidade é apresentada a seguir. Uma amostra representada por $(D_{1}, D_{2})$, foi sorteada com dois desses indivíduos e os seguintes estimadores, para a média de divórcios, foram considerados $\hat{\mu_{1}} = \sqrt{D_{1}D_{2}}$ e $\hat{\mu_{2}} = máximo - mínimo$. Para cada estimador, obtenha a distribuição de probabilidade e verifique se é viciado.
@@ -29,6 +46,7 @@ table_3 <- data.frame("D" = "p", "X0" = 0.5, "X1" = 0.4, "X2" = 0.05, "X3" = 0.0
 table_3
 ```
 
+## Solução
 
 # Questão 4
  
@@ -40,6 +58,8 @@ B. (0.5 pt) Usando a estimativa $p$, obtida a partir da amostra preliminar de 50
 
 C. (0.5 pt) Quão grande terá de ser a amostra se desejarmos estar no mínimo 97% confiantes de que o erro na estimação $p$ seja menor do que 0,02 independente do valor verdadeiro de $p$ ?
 
+## Solução
+
 # Questão 5
 
 (2,5 pts) O consumo de bebidas alcoólicas por mulheres jovens maiores de idade vem aumentando no Reino Unido, nos Estados Unidos e na Europa (*The Wall Street Journal*, 15 de fevereiro de 2006). Dados (consumo anual em litros) consistentes com as descobertas relatadas no artigo do *The Wall Street Journal* são mostrados para uma amostra de 20 mulheres jovens europeias.
@@ -49,7 +69,7 @@ samples_ex5 <- c(266, 82, 199, 174, 97, 164, 102, 113, 171, 0, 170, 222, 115, 13
 samples_ex5
 ```
 
-Considerando que a população é aproximadamente simétrica, construa um intervalo de confiança de 96% para o consumo médio anual de bebidas alcoólicas por mulheres jovens europeias. Informação: $\sum{X_{i}} = 2600$ e $\sum{X^2_{i}} = 419244$. Suponha que dos dados tenha distribui;'ao aproximadamente normal.
+Considerando que a população é aproximadamente simétrica, construa um intervalo de confiança de 96% para o consumo médio anual de bebidas alcoólicas por mulheres jovens europeias. Informação: $\sum{X_{i}} = 2600$ e $\sum{X^2_{i}} = 419244$. Suponha que dos dados tenha distribuição aproximadamente normal.
 
 
 

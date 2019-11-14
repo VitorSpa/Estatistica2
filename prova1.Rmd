@@ -174,5 +174,32 @@ samples_ex5
 
 Considerando que a população é aproximadamente simétrica, construa um intervalo de confiança de 96% para o consumo médio anual de bebidas alcoólicas por mulheres jovens europeias. Informação: $\sum{X_{i}} = 2600$ e $\sum{X^2_{i}} = 419244$. Suponha que dos dados tenha distribuição aproximadamente normal.
 
+### Solução
 
+São dados do problema:
 
+$$n = 20 \ \ df = 19 \\
+  \sum{x_{i}} = 2600 \ \ \sum{x_{i}^2 = 419244} 
+$$
+
+Podemos calcular então: 
+
+$$\bar{x} = \sum{\frac{x_{i}}{n}} = 130 \\
+  S = 65.39
+$$
+
+Queremos um intervalo de confiança $IC = 96\%$, para $\alpha = 4\%$ com $df = 19$ temos (lembrando que a distribuição t no R é one-tailed): 
+
+```{r}
+qt(0.98, 19)
+```
+
+$$t = 2.204701$$
+
+O intervalo de confiança então é:
+
+$$\bar{x} - t \frac{S}{\sqrt{n}} \ ; \ \bar{x} + t \frac{S}{\sqrt{n}}
+
+$$
+
+IC: $[97.76 \ ; \ 162.24]$

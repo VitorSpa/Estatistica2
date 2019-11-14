@@ -422,6 +422,25 @@ $(document).ready(function () {
 <pre><code>##  [1] 266  82 199 174  97 164 102 113 171   0 170 222 115 130 169  93   0
 ## [18]  93 110 130</code></pre>
 <p>Considerando que a população é aproximadamente simétrica, construa um intervalo de confiança de 96% para o consumo médio anual de bebidas alcoólicas por mulheres jovens europeias. Informação: <span class="math inline">\(\sum{X_{i}} = 2600\)</span> e <span class="math inline">\(\sum{X^2_{i}} = 419244\)</span>. Suponha que dos dados tenha distribuição aproximadamente normal.</p>
+<div id="solução-4" class="section level3">
+<h3>Solução</h3>
+<p>São dados do problema:</p>
+<p><span class="math display">\[n = 20 \ \ df = 19 \\
+  \sum{x_{i}} = 2600 \ \ \sum{x_{i}^2 = 419244} 
+\]</span></p>
+<p>Podemos calcular então:</p>
+<p><span class="math display">\[\bar{x} = \sum{\frac{x_{i}}{n}} = 130 \\
+  S = 65.39
+\]</span></p>
+<p>Queremos um intervalo de confiança <span class="math inline">\(IC = 96\%\)</span>, para <span class="math inline">\(\alpha = 4\%\)</span> com <span class="math inline">\(df = 19\)</span> temos (lembrando que a distribuição t no R é one-tailed):</p>
+<pre class="r"><code>qt(0.98, 19)</code></pre>
+<pre><code>## [1] 2.204701</code></pre>
+<p><span class="math display">\[t = 2.204701\]</span></p>
+<p>O intervalo de confiança então é:</p>
+<p>$${x} - t   ;  {x} + t </p>
+<p>$$</p>
+<p>IC: <span class="math inline">\([97.76 \ ; \ 162.24]\)</span></p>
+</div>
 </div>
 
 

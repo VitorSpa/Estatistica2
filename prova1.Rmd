@@ -45,13 +45,13 @@ $$n = 250 \\
   \sigma_{\bar{x}} = \frac{\sigma}{\sqrt{n}} = \frac{8600}{\sqrt{250}}
 $$
 
-a)
-
 Sabemos que:
 
 $$E = \bar{X} - \mu \\ 
   (\bar{X} - \mu) \sim N(0, \frac{\sigma}{n})
 $$
+
+#### (A)
   
 Queremos calcular entao: $P(|E|) < 1350)$
 
@@ -67,6 +67,21 @@ pnorm(2.48) - pnorm(-2.48)
 ```
 
 Então temos que $P(|E| < 1350) = 0.9868618$, ou seja, aproximadamente 98.7%
+
+#### (B)
+
+Queremos calcular entao: $P(|E|) > 1496) = P(E > 1496) + P(E < -1496)$
+
+$$P(E > 1496) = P(Z > 1496 \frac{1}{\sigma_{\bar{x}}}) = P(Z > 2.75) = ...\\
+  P(E < -1496) = P(Z < -1496 \frac{1}{\sigma_{\bar{x}}}) = P(Z < -2.75) = ...$$
+
+Calcularemos então usando o R:
+
+```{r}
+pnorm(-2.75) + (1 - pnorm(2.75))
+```
+
+Então temos $P(|E|) > 1496) = 0.005959526$, ou seja, aproximadamente 0.6%.
 
 # Questão 3
 

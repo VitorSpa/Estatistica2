@@ -331,13 +331,12 @@ $(document).ready(function () {
   \sigma = 8600 \\
   \sigma_{\bar{x}} = \frac{\sigma}{\sqrt{n}} = \frac{8600}{\sqrt{250}}
 \]</span></p>
-<ol style="list-style-type: lower-alpha">
-<li></li>
-</ol>
 <p>Sabemos que:</p>
 <p><span class="math display">\[E = \bar{X} - \mu \\ 
   (\bar{X} - \mu) \sim N(0, \frac{\sigma}{n})
 \]</span></p>
+<div id="a" class="section level4">
+<h4>(A)</h4>
 <p>Queremos calcular entao: <span class="math inline">\(P(|E|) &lt; 1350)\)</span></p>
 <p><span class="math display">\[P(|E| &lt; 1350) = ...\\
   P( -1350 \frac{1}{\sigma_{\bar{x}}} &lt; Z &lt; 1350 \frac{1}{\sigma_{\bar{x}}} = ...\\
@@ -347,6 +346,17 @@ $(document).ready(function () {
 <pre class="r"><code>pnorm(2.48) - pnorm(-2.48)</code></pre>
 <pre><code>## [1] 0.9868618</code></pre>
 <p>Então temos que <span class="math inline">\(P(|E| &lt; 1350) = 0.9868618\)</span>, ou seja, aproximadamente 98.7%</p>
+</div>
+<div id="b" class="section level4">
+<h4>(B)</h4>
+<p>Queremos calcular entao: <span class="math inline">\(P(|E|) &gt; 1496) = P(E &gt; 1496) + P(E &lt; -1496)\)</span></p>
+<p><span class="math display">\[P(E &gt; 1496) = P(Z &gt; 1496 \frac{1}{\sigma_{\bar{x}}}) = P(Z &gt; 2.75) = ...\\
+  P(E &lt; -1496) = P(Z &lt; -1496 \frac{1}{\sigma_{\bar{x}}}) = P(Z &lt; -2.75) = ...\]</span></p>
+<p>Calcularemos então usando o R:</p>
+<pre class="r"><code>pnorm(-2.75) + (1 - pnorm(2.75))</code></pre>
+<pre><code>## [1] 0.005959526</code></pre>
+<p>Então temos <span class="math inline">\(P(|E|) &gt; 1496) = 0.005959526\)</span>, ou seja, aproximadamente 0.6%.</p>
+</div>
 </div>
 </div>
 <div id="questão-3" class="section level1">

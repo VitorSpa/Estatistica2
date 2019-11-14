@@ -8,20 +8,21 @@ title: "Resolução da primeira prova"
 
 (1,0 pt) Se uma amostra com 36 observações for tomada de uma população, qual deve ser o tamanho de uma outra amostra para que o desvio padrão dessa amostra seja $\frac{2}{3}$ do desvio padrão da média da primeira?
 
-## Solução
+### Solução
 
 $$(I)\ a_{1}: n_{1} = 36 \ \ \  \sigma_{\bar{x}_{1}} = \frac{\sigma}{\sqrt{n_{1}}} \\ (II)\ a_{2}:n_{2} = ??? \ \ \  \sigma_{\bar{x}_{2}} = \frac{\sigma}{\sqrt{n_{2}}}$$
 
 Como o desvio padrão da segunda amostra deve ser $\frac{2}{3}$ do desvio padrão da primeira amostra temos:
 
-$$(III)\ \sigma_{\bar{x}_{2}} = \frac{2}{3} \sigma_{\bar{x}_{1}} $$
+$$(III)\ \sigma_{\bar{x}_{2}} = \frac{2}{3} \sigma_{\bar{x}_{1}}$$
 
 Substituindo **I** e **II** em **III**:
 
 $$\sigma_{\bar{x}_{2}} = \frac{2}{3} \sigma_{\bar{x}_{1}} \\ 
   \frac{\sigma}{\sqrt{n_{2}}} = \frac{2}{3} \frac{\sigma}{\sqrt{n_{1}}} \\
   \sqrt{n_{2}} = \sqrt{36} \frac{3}{2} \\
-  n_{2} = 81$$
+  n_{2} = 81
+$$
 
 # Questão 2
 
@@ -35,7 +36,37 @@ C. (1,0 pt) Depois de ter respostas às duas primeiras perguntas, o gerente da i
  
 D. (1,0 pt) Se o tamanho da amostra dobrasse, a prob. da letra **a** aumentaria ou diminuiria ? E da letra **c** ?
 
-## Solução
+### Solução
+
+Temos como dados do problema:
+
+$$n = 250 \\
+  \sigma = 8600 \\
+  \sigma_{\bar{x}} = \frac{\sigma}{\sqrt{n}} = \frac{8600}{\sqrt{250}}
+$$
+
+a)
+
+Sabemos que:
+
+$$E = \bar{X} - \mu \\ 
+  (\bar{X} - \mu) \sim N(0, \frac{\sigma}{n})
+$$
+  
+Queremos calcular entao: $P(|E|) < 1350)$
+
+$$P(|E| < 1350) = ...\\
+  P( -1350 \frac{1}{\sigma_{\bar{x}}} < Z < 1350 \frac{1}{\sigma_{\bar{x}}} = ...\\
+  P(-2.48 < Z < 2.48) =...
+$$
+
+Calcularemos então usando o R:
+
+```{r}
+pnorm(2.48) - pnorm(-2.48)
+```
+
+Então temos que $P(|E| < 1350) = 0.9868618$, ou seja, aproximadamente 98.7%
 
 # Questão 3
 
@@ -46,7 +77,7 @@ table_3 <- data.frame("D" = "p", "X0" = 0.5, "X1" = 0.4, "X2" = 0.05, "X3" = 0.0
 table_3
 ```
 
-## Solução
+### Solução
 
 # Questão 4
  
@@ -58,7 +89,7 @@ B. (0.5 pt) Usando a estimativa $p$, obtida a partir da amostra preliminar de 50
 
 C. (0.5 pt) Quão grande terá de ser a amostra se desejarmos estar no mínimo 97% confiantes de que o erro na estimação $p$ seja menor do que 0,02 independente do valor verdadeiro de $p$ ?
 
-## Solução
+### Solução
 
 # Questão 5
 

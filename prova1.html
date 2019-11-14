@@ -304,16 +304,17 @@ $(document).ready(function () {
 <div id="questão-1" class="section level1">
 <h1>Questão 1</h1>
 <p>(1,0 pt) Se uma amostra com 36 observações for tomada de uma população, qual deve ser o tamanho de uma outra amostra para que o desvio padrão dessa amostra seja <span class="math inline">\(\frac{2}{3}\)</span> do desvio padrão da média da primeira?</p>
-<div id="solução" class="section level2">
-<h2>Solução</h2>
+<div id="solução" class="section level3">
+<h3>Solução</h3>
 <p><span class="math display">\[(I)\ a_{1}: n_{1} = 36 \ \ \  \sigma_{\bar{x}_{1}} = \frac{\sigma}{\sqrt{n_{1}}} \\ (II)\ a_{2}:n_{2} = ??? \ \ \  \sigma_{\bar{x}_{2}} = \frac{\sigma}{\sqrt{n_{2}}}\]</span></p>
 <p>Como o desvio padrão da segunda amostra deve ser <span class="math inline">\(\frac{2}{3}\)</span> do desvio padrão da primeira amostra temos:</p>
-<p><span class="math display">\[(III)\ \sigma_{\bar{x}_{2}} = \frac{2}{3} \sigma_{\bar{x}_{1}} \]</span></p>
+<p><span class="math display">\[(III)\ \sigma_{\bar{x}_{2}} = \frac{2}{3} \sigma_{\bar{x}_{1}}\]</span></p>
 <p>Substituindo <strong>I</strong> e <strong>II</strong> em <strong>III</strong>:</p>
 <p><span class="math display">\[\sigma_{\bar{x}_{2}} = \frac{2}{3} \sigma_{\bar{x}_{1}} \\ 
   \frac{\sigma}{\sqrt{n_{2}}} = \frac{2}{3} \frac{\sigma}{\sqrt{n_{1}}} \\
   \sqrt{n_{2}} = \sqrt{36} \frac{3}{2} \\
-  n_{2} = 81\]</span></p>
+  n_{2} = 81
+\]</span></p>
 </div>
 </div>
 <div id="questão-2" class="section level1">
@@ -323,8 +324,29 @@ $(document).ready(function () {
 <p>B. (1,0 pt) Qual a probabilidade do erro ser superior a R$ 1.496,00 ?</p>
 <p>C. (1,0 pt) Depois de ter respostas às duas primeiras perguntas, o gerente da indústria disse (baseado no conhecimento de anos à frente da indústria) que a média das notas fiscais é de <span class="math inline">\(\mu = R\$ 85.350,00\)</span>. Ele novamente questionou - e quero que responda - qual a probabilidade do valor médio das notas fiscais ser superior a R$ 86.250,00 ?</p>
 <p>D. (1,0 pt) Se o tamanho da amostra dobrasse, a prob. da letra <strong>a</strong> aumentaria ou diminuiria ? E da letra <strong>c</strong> ?</p>
-<div id="solução-1" class="section level2">
-<h2>Solução</h2>
+<div id="solução-1" class="section level3">
+<h3>Solução</h3>
+<p>Temos como dados do problema:</p>
+<p><span class="math display">\[n = 250 \\
+  \sigma = 8600 \\
+  \sigma_{\bar{x}} = \frac{\sigma}{\sqrt{n}} = \frac{8600}{\sqrt{250}}
+\]</span></p>
+<ol style="list-style-type: lower-alpha">
+<li></li>
+</ol>
+<p>Sabemos que:</p>
+<p><span class="math display">\[E = \bar{X} - \mu \\ 
+  (\bar{X} - \mu) \sim N(0, \frac{\sigma}{n})
+\]</span></p>
+<p>Queremos calcular entao: <span class="math inline">\(P(|E|) &lt; 1350)\)</span></p>
+<p><span class="math display">\[P(|E| &lt; 1350) = ...\\
+  P( -1350 \frac{1}{\sigma_{\bar{x}}} &lt; Z &lt; 1350 \frac{1}{\sigma_{\bar{x}}} = ...\\
+  P(-2.48 &lt; Z &lt; 2.48) =...
+\]</span></p>
+<p>Calcularemos então usando o R:</p>
+<pre class="r"><code>pnorm(2.48) - pnorm(-2.48)</code></pre>
+<pre><code>## [1] 0.9868618</code></pre>
+<p>Então temos que <span class="math inline">\(P(|E| &lt; 1350) = 0.9868618\)</span>, ou seja, aproximadamente 98.7%</p>
 </div>
 </div>
 <div id="questão-3" class="section level1">
@@ -332,8 +354,8 @@ $(document).ready(function () {
 <p>(1,0 pt) O número de divórcios por indivíduo adulto casado, em certa comunidade, foi modelado pela variável aleatória <span class="math inline">\(D\)</span>, cuja função de probabilidade é apresentada a seguir. Uma amostra representada por <span class="math inline">\((D_{1}, D_{2})\)</span>, foi sorteada com dois desses indivíduos e os seguintes estimadores, para a média de divórcios, foram considerados <span class="math inline">\(\hat{\mu_{1}} = \sqrt{D_{1}D_{2}}\)</span> e <span class="math inline">\(\hat{\mu_{2}} = máximo - mínimo\)</span>. Para cada estimador, obtenha a distribuição de probabilidade e verifique se é viciado.</p>
 <pre><code>##   D  X0  X1   X2   X3
 ## 1 p 0.5 0.4 0.05 0.05</code></pre>
-<div id="solução-2" class="section level2">
-<h2>Solução</h2>
+<div id="solução-2" class="section level3">
+<h3>Solução</h3>
 </div>
 </div>
 <div id="questão-4" class="section level1">
@@ -342,8 +364,8 @@ $(document).ready(function () {
 <p>A. (1.5 pt) Encontre um intervalo de confiança de 97% para a proporção verdadeira de capacetes desse tipo que mostraria algum dano proveniente desse teste.</p>
 <p>B. (0.5 pt) Usando a estimativa <span class="math inline">\(p\)</span>, obtida a partir da amostra preliminar de 50 capacetes, quantos capacetes devem ser testados para estarmos 97% confiantes de que o erro na estimação do valor verdadeiro de <span class="math inline">\(p\)</span> seja menor do que 0,02.</p>
 <p>C. (0.5 pt) Quão grande terá de ser a amostra se desejarmos estar no mínimo 97% confiantes de que o erro na estimação <span class="math inline">\(p\)</span> seja menor do que 0,02 independente do valor verdadeiro de <span class="math inline">\(p\)</span> ?</p>
-<div id="solução-3" class="section level2">
-<h2>Solução</h2>
+<div id="solução-3" class="section level3">
+<h3>Solução</h3>
 </div>
 </div>
 <div id="questão-5" class="section level1">

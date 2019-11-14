@@ -4,16 +4,17 @@ title: "Resolução da primeira prova"
 
 # Questão 1
 
-Se uma amostra com 36 observações for tomada de uma população, qual deve ser o tamanho de uma outra amostra para que o desvio padrão dessa amostra seja 2/3 do desvio padrão da média da primeira?
+(1,0 pts) Se uma amostra com 36 observações for tomada de uma população, qual deve ser o tamanho de uma outra amostra para que o desvio padrão dessa amostra seja 2/3 do desvio padrão da média da primeira?
 
 # Questão 2
 
-Um auditor deseja estimar o valor médio das notas fiscais com um grande fornecedor de uma industria, de um dado ano fiscal. Para isso, fez as contas, via métodos usuais de cálculo de tamanho de amostra, que deveria tirar uma amostra de tamanho $n = 250$. Devido a sua experiência, ele sabe que o desvio padrão é de $\sigma = R$ 8.600,00$. Muito curioso, ele questionou - e quero que você responda - o seguinte:
+(4,0 pts) Um auditor deseja estimar o valor médio das notas fiscais com um grande fornecedor de uma industria, de um dado ano fiscal. Para isso, fez as contas, via métodos usuais de cálculo de tamanho de amostra, que deveria tirar uma amostra de tamanho $n = 250$. Devido a sua experiência, ele sabe que o desvio padrão é de $\sigma = R\$ 8.600,00$. Muito curioso, ele questionou - e quero que você responda - o seguinte:
 
-   A. Qual a prob. de que o erro, em relação à verdadeira média, seja inferior a R$ 1.350,00 ?
+   A. (1,0 pts) Qual a prob. de que o erro, em relação à verdadeira média, seja inferior a R$ 1.350,00 ?
 
-   B.
+   B. (1,0 pts) Qual a probabilidade do erro ser superior a R$ 1.496,00 ?
 
-   C.
-
-   D.
+   C. (1,0 pts) Depois de ter respostas às duas primeiras perguntas, o gerente da indústria disse (baseado no conhecimento de anos à frente da indústria) que a média das notas fiscais é de $\mi = R\$ 85.350,00$. Ele novamente questionou - e quero que responda - qual a probabilidade do valor médio das notas fiscais ser superior a 
+   R$ 86.250,00 ?
+ 
+   D. (1,0 pts) Se o tamanho da amostra dobrasse, a prob. da letra **a** aumentaria ou diminuiria ? E da letra **c** ?

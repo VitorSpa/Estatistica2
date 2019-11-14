@@ -24,6 +24,10 @@ D. (1,0 pt) Se o tamanho da amostra dobrasse, a prob. da letra **a** aumentaria 
 
 (1,0 pt) O número de divórcios por indivíduo adulto casado, em certa comunidade, foi modelado pela variável aleatória $D$, cuja função de probabilidade é apresentada a seguir. Uma amostra representada por $(D_{1}, D_{2})$, foi sorteada com dois desses indivíduos e os seguintes estimadores, para a média de divórcios, foram considerados $\hat{\mu_{1}} = \sqrt{D_{1}D_{2}}$ e $\hat{\mu_{2}} = máximo - mínimo$. Para cada estimador, obtenha a distribuição de probabilidade e verifique se é viciado.
 
+D | 0 | 1 | 2 | 3
+--- | --- | --- | --- | ---
+p | 0,5 | 0,4 | 0,05 | 0,05
+
 
 # Questão 4
  
@@ -39,7 +43,6 @@ C. (0.5 pt) Quão grande terá de ser a amostra se desejarmos estar no mínimo 9
 
 (2,5 pts) O consumo de bebidas alcoólicas por mulheres jovens maiores de idade vem aumentando no Reino Unido, nos Estados Unidos e na Europa (*The Wall Street Journal*, 15 de fevereiro de 2006). Dados (consumo anual em litros) consistentes com as descobertas relatadas no artigo do *The Wall Street Journal* são mostrados para uma amostra de 20 mulheres jovens europeias.
 
---- | --- | --- | --- | --- | --- | --- | --- | --- | --- 
 266|82|199|174|97|164|102|113|171|0
 170|222|115|130|169|93|0|93|110|130
 

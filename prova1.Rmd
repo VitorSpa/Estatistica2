@@ -198,8 +198,6 @@ $$t = 2.204701$$
 
 O intervalo de confiança então é:
 
-$$\bar{x} - t \frac{S}{\sqrt{n}} \ ; \ \bar{x} + t \frac{S}{\sqrt{n}}
-
+$$\bar{x} - t \frac{S}{\sqrt{n}} \ ; \ \bar{x} + t \frac{S}{\sqrt{n}} \\
+  IC: [97.76 \ ; \ 162.24]
 $$
-
-IC: $[97.76 \ ; \ 162.24]$

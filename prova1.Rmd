@@ -14,7 +14,7 @@ title: "Resolução da primeira prova"
 
    B. (1,0 pts) Qual a probabilidade do erro ser superior a R$ 1.496,00 ?
 
-   C. (1,0 pts) Depois de ter respostas às duas primeiras perguntas, o gerente da indústria disse (baseado no conhecimento de anos à frente da indústria) que a média das notas fiscais é de $\mi = R\$ 85.350,00$. Ele novamente questionou - e quero que responda - qual a probabilidade do valor médio das notas fiscais ser superior a 
+   C. (1,0 pts) Depois de ter respostas às duas primeiras perguntas, o gerente da indústria disse (baseado no conhecimento de anos à frente da indústria) que a média das notas fiscais é de $\mu = R\$ 85.350,00$. Ele novamente questionou - e quero que responda - qual a probabilidade do valor médio das notas fiscais ser superior a 
    R$ 86.250,00 ?
  
    D. (1,0 pts) Se o tamanho da amostra dobrasse, a prob. da letra **a** aumentaria ou diminuiria ? E da letra **c** ?

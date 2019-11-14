@@ -324,8 +324,8 @@ $(document).ready(function () {
 <p>B. (1,0 pt) Qual a probabilidade do erro ser superior a R$ 1.496,00 ?</p>
 <p>C. (1,0 pt) Depois de ter respostas às duas primeiras perguntas, o gerente da indústria disse (baseado no conhecimento de anos à frente da indústria) que a média das notas fiscais é de <span class="math inline">\(\mu = R\$ 85.350,00\)</span>. Ele novamente questionou - e quero que responda - qual a probabilidade do valor médio das notas fiscais ser superior a R$ 86.250,00 ?</p>
 <p>D. (1,0 pt) Se o tamanho da amostra dobrasse, a prob. da letra <strong>a</strong> aumentaria ou diminuiria ? E da letra <strong>c</strong> ?</p>
-<div id="solução-1" class="section level3">
-<h3>Solução</h3>
+<div id="solução-1" class="section level2">
+<h2>Solução</h2>
 <p>Temos como dados do problema:</p>
 <p><span class="math display">\[n = 250 \\
   \sigma = 8600 \\
@@ -335,11 +335,11 @@ $(document).ready(function () {
 <p><span class="math display">\[E = \bar{X} - \mu \\ 
   (\bar{X} - \mu) \sim N(0, \frac{\sigma}{n})
 \]</span></p>
-<div id="a" class="section level4">
-<h4>(A)</h4>
-<p>Queremos calcular entao: <span class="math inline">\(P(|E|) &lt; 1350)\)</span></p>
+<div id="a" class="section level3">
+<h3>(A)</h3>
+<p>Queremos calcular: <span class="math inline">\(P(|E|) &lt; 1350)\)</span></p>
 <p><span class="math display">\[P(|E| &lt; 1350) = ...\\
-  P( -1350 \frac{1}{\sigma_{\bar{x}}} &lt; Z &lt; 1350 \frac{1}{\sigma_{\bar{x}}} = ...\\
+  P( -1350 \frac{1}{\sigma_{\bar{x}}} &lt; Z &lt; 1350 \frac{1}{\sigma_{\bar{x}}}) = ...\\
   P(-2.48 &lt; Z &lt; 2.48) =...
 \]</span></p>
 <p>Calcularemos então usando o R:</p>
@@ -347,15 +347,53 @@ $(document).ready(function () {
 <pre><code>## [1] 0.9868618</code></pre>
 <p>Então temos que <span class="math inline">\(P(|E| &lt; 1350) = 0.9868618\)</span>, ou seja, aproximadamente 98.7%</p>
 </div>
-<div id="b" class="section level4">
-<h4>(B)</h4>
-<p>Queremos calcular entao: <span class="math inline">\(P(|E|) &gt; 1496) = P(E &gt; 1496) + P(E &lt; -1496)\)</span></p>
+<div id="b" class="section level3">
+<h3>(B)</h3>
+<p>Queremos calcular: <span class="math inline">\(P(|E|) &gt; 1496) = P(E &gt; 1496) + P(E &lt; -1496)\)</span></p>
 <p><span class="math display">\[P(E &gt; 1496) = P(Z &gt; 1496 \frac{1}{\sigma_{\bar{x}}}) = P(Z &gt; 2.75) = ...\\
   P(E &lt; -1496) = P(Z &lt; -1496 \frac{1}{\sigma_{\bar{x}}}) = P(Z &lt; -2.75) = ...\]</span></p>
 <p>Calcularemos então usando o R:</p>
 <pre class="r"><code>pnorm(-2.75) + (1 - pnorm(2.75))</code></pre>
 <pre><code>## [1] 0.005959526</code></pre>
 <p>Então temos <span class="math inline">\(P(|E|) &gt; 1496) = 0.005959526\)</span>, ou seja, aproximadamente 0.6%.</p>
+</div>
+<div id="c" class="section level3">
+<h3>(C)</h3>
+<p>Temos que: <span class="math display">\[\mu = 85350 \\
+  \sigma = 8600 \\
+  n = 250
+\]</span></p>
+<p>Queremos calcular: <span class="math inline">\(P(\bar{X} &gt; 86250)\)</span></p>
+<p><span class="math display">\[P(\bar{X} &gt; 86250) = ... \\
+  P(Z &gt; \frac{86250 - 85350}{\frac{8600}{\sqrt{250}}}) = ...\\
+  P(Z &gt; 1.66) = ...
+\]</span></p>
+<p>Calcularemos então usando o R:</p>
+<pre class="r"><code>1 - pnorm(1.66)</code></pre>
+<pre><code>## [1] 0.04845723</code></pre>
+<p>Então temos <span class="math inline">\(P(\bar{X} &gt; 86250) = 0.04845723\)</span>, ou seja, aproximadamente 4.8%.</p>
+</div>
+<div id="d" class="section level3">
+<h3>(D)</h3>
+<p>Dobrando o tamanho da amostra <span class="math inline">\(n_{2} = 2n_{1}\)</span></p>
+<p>Resolvendo para a letra <strong>a</strong>:</p>
+<p><span class="math display">\[P(|E| &lt; 1350) = ...\\
+  P( -1350 \frac{1}{\sigma_{\bar{x}}} &lt; Z &lt; 1350 \frac{1}{\sigma_{\bar{x}}}) = ...\\
+  P(-3.51 &lt; Z &lt; 3.51) =...
+\]</span></p>
+<p>Calcularemos então usando o R:</p>
+<pre class="r"><code>pnorm(3.51) - pnorm(-3.51)</code></pre>
+<pre><code>## [1] 0.9995519</code></pre>
+<p>Comparando com a letra <strong>a</strong>, a probabilidade aumentou.</p>
+<p>Resolvendo para a letra <strong>c</strong>:</p>
+<p><span class="math display">\[P(\bar{X} &gt; 86250) = ... \\
+  P(Z &gt; \frac{86250 - 85350}{\frac{8600}{\sqrt{500}}}) = ...\\
+  P(Z &gt; 2.34) = ...
+\]</span></p>
+<p>Calcularemos então usando o R:</p>
+<pre class="r"><code>1 - pnorm(2.34)</code></pre>
+<pre><code>## [1] 0.00964187</code></pre>
+<p>Comparando com a letra <strong>c</strong>, a probabilidade diminuiu.</p>
 </div>
 </div>
 </div>

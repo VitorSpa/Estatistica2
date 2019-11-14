@@ -36,7 +36,7 @@ C. (1,0 pt) Depois de ter respostas às duas primeiras perguntas, o gerente da i
  
 D. (1,0 pt) Se o tamanho da amostra dobrasse, a prob. da letra **a** aumentaria ou diminuiria ? E da letra **c** ?
 
-### Solução
+## Solução
 
 Temos como dados do problema:
 
@@ -51,12 +51,12 @@ $$E = \bar{X} - \mu \\
   (\bar{X} - \mu) \sim N(0, \frac{\sigma}{n})
 $$
 
-#### (A)
+### (A)
   
-Queremos calcular entao: $P(|E|) < 1350)$
+Queremos calcular: $P(|E|) < 1350)$
 
 $$P(|E| < 1350) = ...\\
-  P( -1350 \frac{1}{\sigma_{\bar{x}}} < Z < 1350 \frac{1}{\sigma_{\bar{x}}} = ...\\
+  P( -1350 \frac{1}{\sigma_{\bar{x}}} < Z < 1350 \frac{1}{\sigma_{\bar{x}}}) = ...\\
   P(-2.48 < Z < 2.48) =...
 $$
 
@@ -68,9 +68,9 @@ pnorm(2.48) - pnorm(-2.48)
 
 Então temos que $P(|E| < 1350) = 0.9868618$, ou seja, aproximadamente 98.7%
 
-#### (B)
+### (B)
 
-Queremos calcular entao: $P(|E|) > 1496) = P(E > 1496) + P(E < -1496)$
+Queremos calcular: $P(|E|) > 1496) = P(E > 1496) + P(E < -1496)$
 
 $$P(E > 1496) = P(Z > 1496 \frac{1}{\sigma_{\bar{x}}}) = P(Z > 2.75) = ...\\
   P(E < -1496) = P(Z < -1496 \frac{1}{\sigma_{\bar{x}}}) = P(Z < -2.75) = ...$$
@@ -82,6 +82,63 @@ pnorm(-2.75) + (1 - pnorm(2.75))
 ```
 
 Então temos $P(|E|) > 1496) = 0.005959526$, ou seja, aproximadamente 0.6%.
+
+### (C)
+
+Temos que:
+$$\mu = 85350 \\
+  \sigma = 8600 \\
+  n = 250
+$$
+
+Queremos calcular: $P(\bar{X} > 86250)$
+
+$$P(\bar{X} > 86250) = ... \\
+  P(Z > \frac{86250 - 85350}{\frac{8600}{\sqrt{250}}}) = ...\\
+  P(Z > 1.66) = ...
+$$
+
+Calcularemos então usando o R:
+
+```{r}
+1 - pnorm(1.66)
+```
+
+Então temos $P(\bar{X} > 86250) = 0.04845723$, ou seja, aproximadamente 4.8%.
+
+### (D)
+
+Dobrando o tamanho da amostra $n_{2} = 2n_{1}$
+
+Resolvendo para a letra **a**:
+
+$$P(|E| < 1350) = ...\\
+  P( -1350 \frac{1}{\sigma_{\bar{x}}} < Z < 1350 \frac{1}{\sigma_{\bar{x}}}) = ...\\
+  P(-3.51 < Z < 3.51) =...
+$$
+
+Calcularemos então usando o R:
+
+```{r}
+pnorm(3.51) - pnorm(-3.51)
+```
+
+Comparando com a letra **a**, a probabilidade aumentou.
+
+Resolvendo para a letra **c**:
+
+$$P(\bar{X} > 86250) = ... \\
+  P(Z > \frac{86250 - 85350}{\frac{8600}{\sqrt{500}}}) = ...\\
+  P(Z > 2.34) = ...
+$$
+
+Calcularemos então usando o R:
+
+```{r}
+1 - pnorm(2.34)
+```
+
+Comparando com a letra **c**, a probabilidade diminuiu.
 
 # Questão 3
 

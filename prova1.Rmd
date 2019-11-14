@@ -6,23 +6,43 @@ title: "Resolução da primeira prova"
 
 # Questão 1
 
-(1,0 pts) Se uma amostra com 36 observações for tomada de uma população, qual deve ser o tamanho de uma outra amostra para que o desvio padrão dessa amostra seja 2/3 do desvio padrão da média da primeira?
+(1,0 pt) Se uma amostra com 36 observações for tomada de uma população, qual deve ser o tamanho de uma outra amostra para que o desvio padrão dessa amostra seja 2/3 do desvio padrão da média da primeira?
 
 # Questão 2
 
 (4,0 pts) Um auditor deseja estimar o valor médio das notas fiscais com um grande fornecedor de uma industria, de um dado ano fiscal. Para isso, fez as contas, via métodos usuais de cálculo de tamanho de amostra, que deveria tirar uma amostra de tamanho $n = 250$. Devido a sua experiência, ele sabe que o desvio padrão é de $\sigma = R\$ 8.600,00$. Muito curioso, ele questionou - e quero que você responda - o seguinte:
 
-A. (1,0 pts) Qual a prob. de que o erro, em relação à verdadeira média, seja inferior a R$ 1.350,00 ?
+A. (1,0 pt) Qual a prob. de que o erro, em relação à verdadeira média, seja inferior a R$ 1.350,00 ?
 
-B. (1,0 pts) Qual a probabilidade do erro ser superior a R$ 1.496,00 ?
+B. (1,0 pt) Qual a probabilidade do erro ser superior a R$ 1.496,00 ?
 
-C. (1,0 pts) Depois de ter respostas às duas primeiras perguntas, o gerente da indústria disse (baseado no conhecimento de anos à frente da indústria) que a média das notas fiscais é de $\mu = R\$ 85.350,00$. Ele novamente questionou - e quero que responda - qual a probabilidade do valor médio das notas fiscais ser superior a R$ 86.250,00 ?
+C. (1,0 pt) Depois de ter respostas às duas primeiras perguntas, o gerente da indústria disse (baseado no conhecimento de anos à frente da indústria) que a média das notas fiscais é de $\mu = R\$ 85.350,00$. Ele novamente questionou - e quero que responda - qual a probabilidade do valor médio das notas fiscais ser superior a R$ 86.250,00 ?
  
-D. (1,0 pts) Se o tamanho da amostra dobrasse, a prob. da letra **a** aumentaria ou diminuiria ? E da letra **c** ?
+D. (1,0 pt) Se o tamanho da amostra dobrasse, a prob. da letra **a** aumentaria ou diminuiria ? E da letra **c** ?
 
 # Questão 3
 
-(1,0 pts) O número de divórcios por indivíduo adulto casado, em certa comunidade, foi modelado pela variável aleatória $D$, cuja função de probabilidade é apresentada a seguir. Uma amostra representada por $(D_{1}, D_{2})$, foi sorteada com dois desses indivíduos e os seguintes estimadores, para a média de divórcios, foram considerados $\hat{\mu_{1}} = \sqrt{D_{1}D_{2}}$ e $\hat{\mu_{2}} = máximo - mínimo$. Para cada estimador, obtenha a distribuição de probabilidade e verifique se é viciado.
+(1,0 pt) O número de divórcios por indivíduo adulto casado, em certa comunidade, foi modelado pela variável aleatória $D$, cuja função de probabilidade é apresentada a seguir. Uma amostra representada por $(D_{1}, D_{2})$, foi sorteada com dois desses indivíduos e os seguintes estimadores, para a média de divórcios, foram considerados $\hat{\mu_{1}} = \sqrt{D_{1}D_{2}}$ e $\hat{\mu_{2}} = máximo - mínimo$. Para cada estimador, obtenha a distribuição de probabilidade e verifique se é viciado.
+
+
+# Questão 4
+ 
+(2.5 pts) Uma amostra aleatória de 50 capacetes de corredores de motos e de automóveis foi sujeita a um teste de impacto, sendo observado algum dano em 18 desses capacetes.
+
+A. (1.5 pt) Encontre um intervalo de confiança de 97% para a proporção verdadeira de capacetes desse tipo que mostraria algum dano proveniente desse teste.
+
+B. (0.5 pt) Usando a estimativa $p$, obtida a partir da amostra preliminar de 50 capacetes, quantos capacetes devem ser testados para estarmos 97% confiantes de que o erro na estimação do valor verdadeiro de $p$ seja menor do que 0,02.
+
+C. (0.5 pt) Quão grande terá de ser a amostra se desejarmos estar no mínimo 97% confiantes de que o erro na estimação $p$ seja menor do que 0,02 independente do valor verdadeiro de $p$ ?
+
+# Questão 5
+
+(2,5 pts) O consumo de bebidas alcoólicas por mulheres jovens maiores de idade vem aumentando no Reino Unido, nos Estados Unidos e na Europa (*The Wall Street Journal*, 15 de fevereiro de 2006). Dados (consumo anual em litros) consistentes com as descobertas relatadas no artigo do *The Wall Street Journal* são mostrados para uma amostra de 20 mulheres jovens europeias.
+
+|266|82|199|174|97|164|102|113|171|0|
+|170|222|115|130|169|93|0|93|110|130
+
+Considerando que a população é aproximadamente simétrica, construa um intervalo de confiança de 96% para o consumo médio anual de bebidas alcoólicas por mulheres jovens europeias. Informação: $\sum{X_{i}} = 2600$ e $\sum{X^2_{i}} = 419244$. Suponha que dos dados tenha distribui;'ao aproximadamente normal.
 
 
 

@@ -9,23 +9,43 @@ title: "Resolução da segunda prova"
 
 ### Questão 1
 
+(2,0 pts) Um criador tem constatado uma proporção de 10% do rebanho com verminose. O veterinário alterou a dieta dos animais e acredita que a doença diminui de intensidade. Um exame de 100 cabeças do rebanho, escolhidas ao acaso, indicou 8 delas com verminose. Ao nível de 8%, há indícios de que a proporção diminui? 
+
 
 #### Solução
 
 
 ### Questão 2
 
+(2,0 pts) A vida média de uma amostra de 100 lâmpadas de certa marca é 1615 horas. Por similaridade com outros processos de fabricação, supomos o desvio padrão igual a 120 horas.  
+
+A. Utilizando um nível de significância de 5%, desejamos testar se a duração média de todas as lâmpadas dessa marca é igual ou diferente de 1600 horas. Qual é a conclusão?
+
+B. Determine também a probabilidade do erro do tipo II, se a média fosse 1620 horas. 
+ 
+
 #### Solução
 
 
 ### Questão 3
 
+(2,0 pts) Sorteamos, ao acaso, 12 observações de uma variável aleatória que segue o modelo normal. Da amostra obtivemos média de 21,7 e desvio padrão 5,5. Determine o nível descritivo do teste $\mu = 18$ contra $\mu > 18$. 
+
+
 #### Solução
 
 ### Questão 4
 
+(2,0 pts) O crescimento de bebês, durante o primeiro mês de vida, pode ser modelado pela distribuição normal. Admita que, em média, um crescimento de 5 centímetros ou mais seja considerado satisfatório. Deseja-se verificar se o crescimento de bebês de família em um bairro da periferia de São Paulo acompanha o padrão esperado. Para tanto, 10 recém-nascidos na região foram sorteados e sua altura acompanhada, fornecendo as seguintes medidas de crescimento em centímetros: 5.03, 5.02, 4.95, 4.96, 5.01, 4.97, 4.90, 4.91, 4.90 e 4.93. Ao nível de 5% de significância, o que se conclui?  
+
 #### Solução
 
 ### Questão 5
+
+(2,0 pt) Para comparar as médias de duas populações normais, amostras aleatórias foram obtidas. Sabe-se que as variâncias populacionais são diferentes, sendo seus valores desconhecidos. O que pode ser dito a respeito das médias das populações ao nível de significância de 0,05? 
+
+Amostra I : 7, 9, 3, 8, 11, 5 e 9 
+
+Amostra II: 2, 7, 5, 15, 9, 16 e 8
 
 #### Solução

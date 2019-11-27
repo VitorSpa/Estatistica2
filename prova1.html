@@ -300,12 +300,14 @@ $(document).ready(function () {
 </div>
 
 
+<div id="prova1" class="section level2 tabset tabset-fade">
+<h2>Prova1</h2>
 <hr />
-<div id="questão-1" class="section level1">
-<h1>Questão 1</h1>
+<div id="questão-1" class="section level3">
+<h3>Questão 1</h3>
 <p>(1,0 pt) Se uma amostra com 36 observações for tomada de uma população, qual deve ser o tamanho de uma outra amostra para que o desvio padrão dessa amostra seja <span class="math inline">\(\frac{2}{3}\)</span> do desvio padrão da média da primeira?</p>
-<div id="solução" class="section level3">
-<h3>Solução</h3>
+<div id="solução" class="section level4">
+<h4>Solução</h4>
 <p><span class="math display">\[(I)\ a_{1}: n_{1} = 36 \ \ \  \sigma_{\bar{x}_{1}} = \frac{\sigma}{\sqrt{n_{1}}} \\ (II)\ a_{2}:n_{2} = ??? \ \ \  \sigma_{\bar{x}_{2}} = \frac{\sigma}{\sqrt{n_{2}}}\]</span></p>
 <p>Como o desvio padrão da segunda amostra deve ser <span class="math inline">\(\frac{2}{3}\)</span> do desvio padrão da primeira amostra temos:</p>
 <p><span class="math display">\[(III)\ \sigma_{\bar{x}_{2}} = \frac{2}{3} \sigma_{\bar{x}_{1}}\]</span></p>
@@ -317,15 +319,15 @@ $(document).ready(function () {
 \]</span></p>
 </div>
 </div>
-<div id="questão-2" class="section level1">
-<h1>Questão 2</h1>
+<div id="questão-2" class="section level3">
+<h3>Questão 2</h3>
 <p>(4,0 pts) Um auditor deseja estimar o valor médio das notas fiscais com um grande fornecedor de uma industria, de um dado ano fiscal. Para isso, fez as contas, via métodos usuais de cálculo de tamanho de amostra, que deveria tirar uma amostra de tamanho <span class="math inline">\(n = 250\)</span>. Devido a sua experiência, ele sabe que o desvio padrão é de <span class="math inline">\(\sigma = R\$ 8.600,00\)</span>. Muito curioso, ele questionou - e quero que você responda - o seguinte:</p>
 <p>A. (1,0 pt) Qual a prob. de que o erro, em relação à verdadeira média, seja inferior a R$ 1.350,00 ?</p>
 <p>B. (1,0 pt) Qual a probabilidade do erro ser superior a R$ 1.496,00 ?</p>
 <p>C. (1,0 pt) Depois de ter respostas às duas primeiras perguntas, o gerente da indústria disse (baseado no conhecimento de anos à frente da indústria) que a média das notas fiscais é de <span class="math inline">\(\mu = R\$ 85.350,00\)</span>. Ele novamente questionou - e quero que responda - qual a probabilidade do valor médio das notas fiscais ser superior a R$ 86.250,00 ?</p>
 <p>D. (1,0 pt) Se o tamanho da amostra dobrasse, a prob. da letra <strong>a</strong> aumentaria ou diminuiria ? E da letra <strong>c</strong> ?</p>
-<div id="solução-1" class="section level2">
-<h2>Solução</h2>
+<div id="solução-1" class="section level4">
+<h4>Solução</h4>
 <p>Temos como dados do problema:</p>
 <p><span class="math display">\[n = 250 \\
   \sigma = 8600 \\
@@ -335,8 +337,8 @@ $(document).ready(function () {
 <p><span class="math display">\[E = \bar{X} - \mu \\ 
   (\bar{X} - \mu) \sim N(0, \frac{\sigma}{n})
 \]</span></p>
-<div id="a" class="section level3">
-<h3>(A)</h3>
+<div id="a" class="section level5">
+<h5>(A)</h5>
 <p>Queremos calcular: <span class="math inline">\(P(|E|) &lt; 1350)\)</span></p>
 <p><span class="math display">\[P(|E| &lt; 1350) = ...\\
   P( -1350 \frac{1}{\sigma_{\bar{x}}} &lt; Z &lt; 1350 \frac{1}{\sigma_{\bar{x}}}) = ...\\
@@ -347,8 +349,8 @@ $(document).ready(function () {
 <pre><code>## [1] 0.9868618</code></pre>
 <p>Então temos que <span class="math inline">\(P(|E| &lt; 1350) = 0.9868618\)</span>, ou seja, aproximadamente 98.7%</p>
 </div>
-<div id="b" class="section level3">
-<h3>(B)</h3>
+<div id="b" class="section level5">
+<h5>(B)</h5>
 <p>Queremos calcular: <span class="math inline">\(P(|E|) &gt; 1496) = P(E &gt; 1496) + P(E &lt; -1496)\)</span></p>
 <p><span class="math display">\[P(E &gt; 1496) = P(Z &gt; 1496 \frac{1}{\sigma_{\bar{x}}}) = P(Z &gt; 2.75) = ...\\
   P(E &lt; -1496) = P(Z &lt; -1496 \frac{1}{\sigma_{\bar{x}}}) = P(Z &lt; -2.75) = ...\]</span></p>
@@ -357,8 +359,8 @@ $(document).ready(function () {
 <pre><code>## [1] 0.005959526</code></pre>
 <p>Então temos <span class="math inline">\(P(|E|) &gt; 1496) = 0.005959526\)</span>, ou seja, aproximadamente 0.6%.</p>
 </div>
-<div id="c" class="section level3">
-<h3>(C)</h3>
+<div id="c" class="section level5">
+<h5>(C)</h5>
 <p>Temos que: <span class="math display">\[\mu = 85350 \\
   \sigma = 8600 \\
   n = 250
@@ -373,8 +375,8 @@ $(document).ready(function () {
 <pre><code>## [1] 0.04845723</code></pre>
 <p>Então temos <span class="math inline">\(P(\bar{X} &gt; 86250) = 0.04845723\)</span>, ou seja, aproximadamente 4.8%.</p>
 </div>
-<div id="d" class="section level3">
-<h3>(D)</h3>
+<div id="d" class="section level5">
+<h5>(D)</h5>
 <p>Dobrando o tamanho da amostra <span class="math inline">\(n_{2} = 2n_{1}\)</span></p>
 <p>Resolvendo para a letra <strong>a</strong>:</p>
 <p><span class="math display">\[P(|E| &lt; 1350) = ...\\
@@ -397,33 +399,33 @@ $(document).ready(function () {
 </div>
 </div>
 </div>
-<div id="questão-3" class="section level1">
-<h1>Questão 3</h1>
+<div id="questão-3" class="section level3">
+<h3>Questão 3</h3>
 <p>(1,0 pt) O número de divórcios por indivíduo adulto casado, em certa comunidade, foi modelado pela variável aleatória <span class="math inline">\(D\)</span>, cuja função de probabilidade é apresentada a seguir. Uma amostra representada por <span class="math inline">\((D_{1}, D_{2})\)</span>, foi sorteada com dois desses indivíduos e os seguintes estimadores, para a média de divórcios, foram considerados <span class="math inline">\(\hat{\mu_{1}} = \sqrt{D_{1}D_{2}}\)</span> e <span class="math inline">\(\hat{\mu_{2}} = máximo - mínimo\)</span>. Para cada estimador, obtenha a distribuição de probabilidade e verifique se é viciado.</p>
 <pre><code>##   D  X0  X1   X2   X3
 ## 1 p 0.5 0.4 0.05 0.05</code></pre>
-<div id="solução-2" class="section level3">
-<h3>Solução</h3>
+<div id="solução-2" class="section level4">
+<h4>Solução</h4>
 </div>
 </div>
-<div id="questão-4" class="section level1">
-<h1>Questão 4</h1>
+<div id="questão-4" class="section level3">
+<h3>Questão 4</h3>
 <p>(2.5 pts) Uma amostra aleatória de 50 capacetes de corredores de motos e de automóveis foi sujeita a um teste de impacto, sendo observado algum dano em 18 desses capacetes.</p>
 <p>A. (1.5 pt) Encontre um intervalo de confiança de 97% para a proporção verdadeira de capacetes desse tipo que mostraria algum dano proveniente desse teste.</p>
 <p>B. (0.5 pt) Usando a estimativa <span class="math inline">\(p\)</span>, obtida a partir da amostra preliminar de 50 capacetes, quantos capacetes devem ser testados para estarmos 97% confiantes de que o erro na estimação do valor verdadeiro de <span class="math inline">\(p\)</span> seja menor do que 0,02.</p>
 <p>C. (0.5 pt) Quão grande terá de ser a amostra se desejarmos estar no mínimo 97% confiantes de que o erro na estimação <span class="math inline">\(p\)</span> seja menor do que 0,02 independente do valor verdadeiro de <span class="math inline">\(p\)</span> ?</p>
-<div id="solução-3" class="section level3">
-<h3>Solução</h3>
+<div id="solução-3" class="section level4">
+<h4>Solução</h4>
 </div>
 </div>
-<div id="questão-5" class="section level1">
-<h1>Questão 5</h1>
+<div id="questão-5" class="section level3">
+<h3>Questão 5</h3>
 <p>(2,5 pts) O consumo de bebidas alcoólicas por mulheres jovens maiores de idade vem aumentando no Reino Unido, nos Estados Unidos e na Europa (<em>The Wall Street Journal</em>, 15 de fevereiro de 2006). Dados (consumo anual em litros) consistentes com as descobertas relatadas no artigo do <em>The Wall Street Journal</em> são mostrados para uma amostra de 20 mulheres jovens europeias.</p>
 <pre><code>##  [1] 266  82 199 174  97 164 102 113 171   0 170 222 115 130 169  93   0
 ## [18]  93 110 130</code></pre>
 <p>Considerando que a população é aproximadamente simétrica, construa um intervalo de confiança de 96% para o consumo médio anual de bebidas alcoólicas por mulheres jovens europeias. Informação: <span class="math inline">\(\sum{X_{i}} = 2600\)</span> e <span class="math inline">\(\sum{X^2_{i}} = 419244\)</span>. Suponha que dos dados tenha distribuição aproximadamente normal.</p>
-<div id="solução-4" class="section level3">
-<h3>Solução</h3>
+<div id="solução-4" class="section level4">
+<h4>Solução</h4>
 <p>São dados do problema:</p>
 <p><span class="math display">\[n = 20 \ \ df = 19 \\
   \sum{x_{i}} = 2600 \ \ \sum{x_{i}^2 = 419244} 
@@ -440,6 +442,7 @@ $(document).ready(function () {
 <p><span class="math display">\[\bar{x} - t \frac{S}{\sqrt{n}} \ ; \ \bar{x} + t \frac{S}{\sqrt{n}} \\
   IC: [97.76 \ ; \ 162.24]
 \]</span></p>
+</div>
 </div>
 </div>
 

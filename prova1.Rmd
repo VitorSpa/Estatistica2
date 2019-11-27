@@ -2,7 +2,7 @@
 title: "Resolução da primeira prova"
 ---
 
-## Prova1 {.tabset .tabset-fade}
+## Prova 1 {.tabset .tabset-fade}
 
 ---
 

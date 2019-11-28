@@ -305,8 +305,8 @@ $(document).ready(function () {
 
 <div id="solução-dos-exercícios-de-anova-em-r" class="section level1 tabset tabset-fade">
 <h1>Solução dos exercícios de ANOVA em R</h1>
-<div id="exemplo-9.16" class="section level2">
-<h2>Exemplo 9.16</h2>
+<div id="exemplo-9.16-pg-337" class="section level2">
+<h2>Exemplo 9.16 (pg 337)</h2>
 <p>A gerência de um depósito que armazena cargas aéreas de pequeno porteestá estudando o peso das cargas que chegam ao seu terminal no interior de São Paulo. Usualmente, o terminal recebe 4 tipos de carga: domésticas (D), administrativa (A), equipamentos industriais (E) e outros tipos (O). Deseja-se verificar se, em média, exxistem diferenças entre os pesos dos 4 tipos de cargas. Ao longo de 1 mês, cargas foram escolhidas aleatoriamentee seus pesos foram aferidos, fornecendo os dados (em kg):</p>
 <p>Criando um Data Frame com os valores:</p>
 <pre class="r"><code>tipo &lt;- c(&quot;d&quot;, &quot;d&quot;, &quot;d&quot;, &quot;d&quot;, &quot;d&quot;, &quot;d&quot;, &quot;d&quot;, &quot;a&quot;, &quot;a&quot;, &quot;a&quot;, &quot;a&quot;, &quot;a&quot;, &quot;a&quot;, &quot;a&quot;, &quot;e&quot;, &quot;e&quot;, &quot;e&quot;, &quot;e&quot; ,&quot;e&quot; ,&quot;e&quot; ,&quot;e&quot;, &quot;o&quot;, &quot;o&quot;, &quot;o&quot;, &quot;o&quot;, &quot;o&quot;, &quot;o&quot; ,&quot;o&quot;)
@@ -322,8 +322,8 @@ summary(model)</code></pre>
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 </div>
-<div id="exercício-2" class="section level2">
-<h2>Exercício 2</h2>
+<div id="exercício-2-pg-347" class="section level2">
+<h2>Exercício 2 (pg 347)</h2>
 <p>Uma agência de empregos deseja verificar o grau de satisfação de seus clientes. Para tanto, escolheu aleatoriamente domicílios de famílias de bairros classe A, B e C, que fizeram uso da agência e solicitou que um questionário fosse preenchido pela pessoa responsável na família. Os questionários foram devidamente codificados, a fim de fornecer um índice de satisfação que varia de 1 a 5 (totalmente satisfeito). Os resultados estão apresentados a seguir. Qual seria sua conclusão, considerando <span class="math inline">\(\alpha = 5%\)</span> ? Indique as suposições adequadas.</p>
 <p>Criando um Data Frame com os valores:</p>
 <pre class="r"><code>classe &lt;- c(&quot;A&quot;, &quot;A&quot;, &quot;A&quot;, &quot;A&quot;, &quot;A&quot;, &quot;A&quot;, &quot;A&quot;, &quot;A&quot;, &quot;A&quot;, &quot;A&quot;, &quot;B&quot;, &quot;B&quot;, &quot;B&quot;, &quot;B&quot;, &quot;B&quot;, &quot;B&quot;, &quot;B&quot;, &quot;B&quot;, &quot;C&quot;, &quot;C&quot;, &quot;C&quot;, &quot;C&quot;, &quot;C&quot;, &quot;C&quot;, &quot;C&quot;)
@@ -339,8 +339,8 @@ summary(model)</code></pre>
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 </div>
-<div id="exercício-3" class="section level2">
-<h2>Exercício 3</h2>
+<div id="exercício-3-pg-347" class="section level2">
+<h2>Exercício 3 (pg 347)</h2>
 <p>A fim de verificar o efeito de quatro tipos de propaganda de uma determinada marca de goma de mascar, crianças foram atribuídas aleatoriamente a cada uma de 4 salas que mostravam desenhos animados, com intervalos regulares em que as correspondentes propagandas eram inseridas. Após a sessão, as crianças foram entrevistadas por psicólogos, que atribuíram um índice de assimilação a cada criança (dados a seguir). Quanto maior esse índice, maior seria a lembrança do produto. Faça as suposições necessárias e use <span class="math inline">\(\alpha = 5%\)</span>.</p>
 <p>Criando um Data Frame com os valores:</p>
 <pre class="r"><code>propaganda &lt;- c(&quot;um&quot;, &quot;um&quot;, &quot;um&quot;, &quot;um&quot;, &quot;um&quot;, &quot;um&quot;, &quot;um&quot;, &quot;um&quot;, &quot;um&quot;, &quot;um&quot;, &quot;um&quot;, &quot;um&quot;, &quot;dois&quot;, &quot;dois&quot;, &quot;dois&quot;, &quot;dois&quot;, &quot;dois&quot;, &quot;dois&quot;, &quot;dois&quot;, &quot;dois&quot;, &quot;dois&quot;, &quot;dois&quot;, &quot;dois&quot;, &quot;dois&quot;, &quot;três&quot;, &quot;três&quot;, &quot;três&quot;, &quot;três&quot;, &quot;três&quot;, &quot;três&quot;, &quot;três&quot;, &quot;três&quot;, &quot;três&quot;, &quot;três&quot;, &quot;três&quot;, &quot;três&quot;, &quot;quatro&quot;, &quot;quatro&quot;, &quot;quatro&quot;, &quot;quatro&quot;, &quot;quatro&quot;, &quot;quatro&quot;, &quot;quatro&quot;, &quot;quatro&quot;, &quot;quatro&quot;, &quot;quatro&quot;, &quot;quatro&quot;, &quot;quatro&quot;) 

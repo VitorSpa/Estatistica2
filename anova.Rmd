@@ -4,7 +4,7 @@ title: "Exercícios de ANOVA"
 
 # Solução dos exercícios de ANOVA em R {.tabset .tabset-fade}  
   
-## Exemplo 9.16
+## Exemplo 9.16 (pg 337)
 
 A gerência de um depósito que armazena cargas aéreas de pequeno porteestá estudando o peso das cargas que chegam ao seu terminal no interior de São Paulo. Usualmente, o terminal recebe 4 tipos de carga: domésticas (D), administrativa (A), equipamentos industriais (E) e outros tipos (O). Deseja-se verificar se, em média, exxistem diferenças entre os pesos dos 4 tipos de cargas. Ao longo de 1 mês, cargas foram escolhidas aleatoriamentee seus pesos foram aferidos, fornecendo os dados (em kg):
   
@@ -24,7 +24,7 @@ model <- aov(peso ~ tipo, data = carga.data)
 summary(model)
 ```
 
-## Exercício 2
+## Exercício 2 (pg 347)
 
 Uma agência de empregos deseja verificar o grau de satisfação de seus clientes. Para tanto, escolheu aleatoriamente domicílios de famílias de bairros classe A, B e C, que fizeram uso da agência e solicitou que um questionário fosse preenchido pela pessoa responsável na família. Os questionários foram devidamente codificados, a fim de fornecer um índice de satisfação que varia de 1 a 5 (totalmente satisfeito). Os resultados estão apresentados a seguir. Qual seria sua conclusão, considerando $\alpha = 5%$ ? Indique as suposições adequadas.
 
@@ -44,7 +44,7 @@ model <- aov(indice ~ classe, data = indice.data)
 summary(model)
 ```
 
-## Exercício 3
+## Exercício 3 (pg 347)
 
 A fim de verificar o efeito de quatro tipos de propaganda de uma determinada marca de goma de mascar, crianças foram atribuídas aleatoriamente a cada uma de 4 salas que mostravam desenhos animados, com intervalos regulares em que as correspondentes propagandas eram inseridas. Após a sessão, as crianças foram entrevistadas por psicólogos, que atribuíram um índice de assimilação a cada criança (dados a seguir). Quanto maior esse índice, maior seria a lembrança do produto. Faça as suposições necessárias e use $\alpha = 5%$.
 

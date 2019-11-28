@@ -21,3 +21,8 @@ Neste site encontramos as seguintes seções:
 3. Teorema Central do Limite
 
    Estudo empírico do Teorema Central do Limite através de simulações usando a linguagem de programação R.
+   
+4. Ex ANOVA
+   
+   Resolução utilizando de alguns exercícios de ANOVA utilizando a linguagem R. Livro: "Noções de Probabilidade e Estatística" de Marcos Nascimento Magalhães e Antonio Carlos Pedroso de Lima
+    

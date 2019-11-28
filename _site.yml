@@ -11,6 +11,8 @@ navbar:
       href: prova2.html
     - text: "Teorema Central do Limite"
       href: tcl.html
+    - text: "Ex ANOVA"
+      href: anova.html
 output:
   html_document:
     theme: paper

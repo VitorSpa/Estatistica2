@@ -1,0 +1,65 @@
+---
+title: "Exercícios de ANOVA"
+---
+
+# Solução dos exercícios de ANOVA em R {.tabset .tabset-fade}  
+  
+## Exemplo 9.16
+
+A gerência de um depósito que armazena cargas aéreas de pequeno porteestá estudando o peso das cargas que chegam ao seu terminal no interior de São Paulo. Usualmente, o terminal recebe 4 tipos de carga: domésticas (D), administrativa (A), equipamentos industriais (E) e outros tipos (O). Deseja-se verificar se, em média, exxistem diferenças entre os pesos dos 4 tipos de cargas. Ao longo de 1 mês, cargas foram escolhidas aleatoriamentee seus pesos foram aferidos, fornecendo os dados (em kg):
+  
+  Criando um Data Frame com os valores:
+  
+```{r}
+tipo <- c("d", "d", "d", "d", "d", "d", "d", "a", "a", "a", "a", "a", "a", "a", "e", "e", "e", "e" ,"e" ,"e" ,"e", "o", "o", "o", "o", "o", "o" ,"o")
+peso <- c(24.9, 20.4, 24.2, 22.3, 20.3, 24.0, 23.5, 27.9, 28.1, 28.4, 25.3, 29.3, 28.5, 27.9, 38.4, 38.6, 41.2, 43.9, 40.2, 40.2, 37.3, 23.8, 25.3, 23.5, 27.6, 25.5, 23.9, 22.6)
+
+carga.data <- data.frame(tipo, peso)
+```
+
+Fazendo os cálculos da ANOVA:
+  
+```{r}
+model <- aov(peso ~ tipo, data = carga.data)
+summary(model)
+```
+
+## Exercício 2
+
+Uma agência de empregos deseja verificar o grau de satisfação de seus clientes. Para tanto, escolheu aleatoriamente domicílios de famílias de bairros classe A, B e C, que fizeram uso da agência e solicitou que um questionário fosse preenchido pela pessoa responsável na família. Os questionários foram devidamente codificados, a fim de fornecer um índice de satisfação que varia de 1 a 5 (totalmente satisfeito). Os resultados estão apresentados a seguir. Qual seria sua conclusão, considerando $\alpha = 5%$ ? Indique as suposições adequadas.
+
+Criando um Data Frame com os valores:
+  
+```{r}
+classe <- c("A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "B", "B", "B", "B", "B", "B", "B", "B", "C", "C", "C", "C", "C", "C", "C")
+indice <- c(2.7, 4.3, 3.4, 2.9, 4.5, 3.7, 4.6, 4.7, 3.5, 3.8, 4.0, 2.3, 2.5, 2.5, 4.1, 4.2, 3.5, 4.2, 1.5, 1.7, 2.7, 2.5, 2.8, 3.1, 2.4)
+
+indice.data <- data.frame(classe, indice)
+```
+
+Fazendo os cálculos da ANOVA:
+  
+```{r}
+model <- aov(indice ~ classe, data = indice.data)
+summary(model)
+```
+
+## Exercício 3
+
+A fim de verificar o efeito de quatro tipos de propaganda de uma determinada marca de goma de mascar, crianças foram atribuídas aleatoriamente a cada uma de 4 salas que mostravam desenhos animados, com intervalos regulares em que as correspondentes propagandas eram inseridas. Após a sessão, as crianças foram entrevistadas por psicólogos, que atribuíram um índice de assimilação a cada criança (dados a seguir). Quanto maior esse índice, maior seria a lembrança do produto. Faça as suposições necessárias e use $\alpha = 5%$.
+
+Criando um Data Frame com os valores:
+
+```{r}
+propaganda <- c("um", "um", "um", "um", "um", "um", "um", "um", "um", "um", "um", "um", "dois", "dois", "dois", "dois", "dois", "dois", "dois", "dois", "dois", "dois", "dois", "dois", "três", "três", "três", "três", "três", "três", "três", "três", "três", "três", "três", "três", "quatro", "quatro", "quatro", "quatro", "quatro", "quatro", "quatro", "quatro", "quatro", "quatro", "quatro", "quatro") 
+indice2 <- c(15, 7, 6, 10, 5, 5, 7, 6, 7, 6, 6, 8, 22, 21, 23, 20, 18, 21, 22, 16, 15, 22, 18, 22, 8, 8, 7, 10, 13, 8, 15, 11, 16, 8, 15, 8, 17, 16, 19, 11, 11, 13, 10, 11, 18, 11, 10, 19)
+
+indice2.data <- data.frame(propaganda, indice2)
+```
+
+Fazendo os cálculos da ANOVA:
+  
+```{r}
+model <- aov(indice2 ~ propaganda, data = indice2.data)
+summary(model)
+```

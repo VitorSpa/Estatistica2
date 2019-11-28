@@ -24,6 +24,15 @@ model <- aov(peso ~ tipo, data = carga.data)
 summary(model)
 ```
 
+Calculando f crítico:
+
+```{r}
+f_crit1 <- qf(0.95, 3, 24)
+f_crit1
+```
+
+Temos F observado maior que f crítico. Então rejeitamos $H_0$, em média existe diferença de peso.
+
 ## Exercício 2 (pg 347)
 
 Uma agência de empregos deseja verificar o grau de satisfação de seus clientes. Para tanto, escolheu aleatoriamente domicílios de famílias de bairros classe A, B e C, que fizeram uso da agência e solicitou que um questionário fosse preenchido pela pessoa responsável na família. Os questionários foram devidamente codificados, a fim de fornecer um índice de satisfação que varia de 1 a 5 (totalmente satisfeito). Os resultados estão apresentados a seguir. Qual seria sua conclusão, considerando $\alpha = 5%$ ? Indique as suposições adequadas.
@@ -44,6 +53,15 @@ model <- aov(indice ~ classe, data = indice.data)
 summary(model)
 ```
 
+Calculando f crítico:
+
+```{r}
+f_crit2 <- qf(0.95, 2, 22)
+f_crit2
+```
+
+Temos F observado maior que f crítico. Então rejeitamos $H_0$, o índice de satisfação varia com a classe social.
+
 ## Exercício 3 (pg 347)
 
 A fim de verificar o efeito de quatro tipos de propaganda de uma determinada marca de goma de mascar, crianças foram atribuídas aleatoriamente a cada uma de 4 salas que mostravam desenhos animados, com intervalos regulares em que as correspondentes propagandas eram inseridas. Após a sessão, as crianças foram entrevistadas por psicólogos, que atribuíram um índice de assimilação a cada criança (dados a seguir). Quanto maior esse índice, maior seria a lembrança do produto. Faça as suposições necessárias e use $\alpha = 5%$.
@@ -63,3 +81,12 @@ Fazendo os cálculos da ANOVA:
 model <- aov(indice2 ~ propaganda, data = indice2.data)
 summary(model)
 ```
+
+Calculando f crítico:
+
+```{r}
+f_crit3 <- qf(0.95, 3, 44)
+f_crit3
+```
+
+Temos F observado maior que f crítico. Então rejeitamos $H_0$, as propagandas tem efeito diferenciado.

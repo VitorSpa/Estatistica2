@@ -321,6 +321,11 @@ summary(model)</code></pre>
 ## Residuals   24   75.1     3.1                     
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<p>Calculando f crítico:</p>
+<pre class="r"><code>f_crit1 &lt;- qf(0.95, 3, 24)
+f_crit1</code></pre>
+<pre><code>## [1] 3.008787</code></pre>
+<p>Temos F observado maior que f crítico. Então rejeitamos <span class="math inline">\(H_0\)</span>, em média existe diferença de peso.</p>
 </div>
 <div id="exercício-2-pg-347" class="section level2">
 <h2>Exercício 2 (pg 347)</h2>
@@ -338,6 +343,11 @@ summary(model)</code></pre>
 ## Residuals   22 11.486   0.522                  
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<p>Calculando f crítico:</p>
+<pre class="r"><code>f_crit2 &lt;- qf(0.95, 2, 22)
+f_crit2</code></pre>
+<pre><code>## [1] 3.443357</code></pre>
+<p>Temos F observado maior que f crítico. Então rejeitamos <span class="math inline">\(H_0\)</span>, o índice de satisfação varia com a classe social.</p>
 </div>
 <div id="exercício-3-pg-347" class="section level2">
 <h2>Exercício 3 (pg 347)</h2>
@@ -355,6 +365,11 @@ summary(model)</code></pre>
 ## Residuals   44  429.3     9.8                     
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<p>Calculando f crítico:</p>
+<pre class="r"><code>f_crit3 &lt;- qf(0.95, 3, 44)
+f_crit3</code></pre>
+<pre><code>## [1] 2.816466</code></pre>
+<p>Temos F observado maior que f crítico. Então rejeitamos <span class="math inline">\(H_0\)</span>, as propagandas tem efeito diferenciado.</p>
 </div>
 </div>
 

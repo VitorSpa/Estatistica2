@@ -2,4 +2,108 @@
 title: "Teorema Central do Limite"
 ---
 
-Hello, TCL!
+## TCL {.tabset .tabset-fade}
+
+### Introdução
+
+O Teorema Central do Limite nos mostra que a média de n elementos de uma população tende à uma distribuição normal.
+
+Seja uma amostra aleatória $(X_{1}, X_{2}, ..., X_{n})$ de uma distribuição de $E(X) = \mu$ e Variância $\sigma^2$ temos que:
+
+$E(\bar{X}) = \mu$ e $Var(\bar{X}) = \frac{\sigma^2}{n}$
+
+Vamos demonstrar então o teorema de forma empírica tirando diversas amostras de diferentes distribuições discretas e contínuas.
+
+Serão criadas amostras dos seguintes tamanhos:
+
+$n = 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 75, 100, 250, 500, 1000$
+
+```{r}
+sampleSizes <- c(5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 75, 100, 250, 500, 1000)
+```
+
+Para cada tamanho serão geradas 1000 amostras. Totalizando mil médias de cada tamanho de amostra para cada distribuição.
+
+```{r}
+nSamples <- 1000
+```
+
+
+### Distribuições Discretas {.tabset .tabset-fade}
+
+#### Bernoulli {.tabset .tabset-fade}
+
+A distribuição de Bernoulli tem parâmetros p e apresenta:
+
+$X \sim Bern(p)$
+
+$E(X) = p$ e $Var(X) = p(1-p)$
+
+##### Para $p = 0.5$ 
+
+Teríamos então $E(X) = 0.5$ e $Var(X) = 0.00025$
+
+```{r}
+bernMeans <- NULL
+bernVars <- NULL
+plot_list <- NULL
+
+for (size in sampleSizes){
+  aux <- NULL
+  for(i in 1:1000){
+  aux <- c(aux, mean(rbinom(size, 1, 0.5)))
+  }
+  print(c("Tamanho da amostra:", size))
+  plot_list <- c(plot_list, hist(aux, main = "Histograma das médias", xlab = "Média", ylab = "Freq", xlim = c(0,1), ylim = c(0,500), col = "darkgrey"))
+  bernMeans <- c(bernMeans, mean(aux))
+  bernVars  <- c(bernVars, var(aux))
+}  
+bernMeans 
+bernVars
+
+```
+
+##### Para $p = 0.7$ 
+
+Teríamos então $E(X) = 0.7$ e $Var(X) = 0.00021$
+
+```{r}
+bernMeans <- NULL
+bernVars <- NULL
+plot_list <- NULL
+
+for (size in sampleSizes){
+  aux <- NULL
+  for(i in 1:1000){
+  aux <- c(aux, mean(rbinom(size, 1, 0.7)))
+  }
+  print(c("Tamanho da amostra:", size))
+  plot_list <- c(plot_list, hist(aux, main = "Histograma das médias", xlab = "Média", ylab = "Freq", xlim = c(0,1), ylim = c(0,500), col = "darkgrey"))
+  bernMeans <- c(bernMeans, mean(aux))
+  bernVars  <- c(bernVars, var(aux))
+}  
+bernMeans 
+bernVars
+```
+
+#### Binomial
+
+#### Geométrica
+
+#### Poisson
+
+### Distribuições Contínuas {.tabset .tabset-fade}
+
+#### Uniforme
+
+#### Normal
+
+#### Exponencial 
+
+#### t-Student
+
+#### chi-Quadrado
+
+#### Fisher-Snedecor
+
+### Conclusão

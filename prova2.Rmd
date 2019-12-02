@@ -3,7 +3,7 @@ title: "Resolução da segunda prova"
 ---
 
 
-## Prova 2 {.tabset .tabset-fade}
+## 05/11/2019 {.tabset .tabset-fade}
 
 ---
 
@@ -11,9 +11,39 @@ title: "Resolução da segunda prova"
 
 (2,0 pts) Um criador tem constatado uma proporção de 10% do rebanho com verminose. O veterinário alterou a dieta dos animais e acredita que a doença diminui de intensidade. Um exame de 100 cabeças do rebanho, escolhidas ao acaso, indicou 8 delas com verminose. Ao nível de 8%, há indícios de que a proporção diminui? 
 
-
 #### Solução
 
+Pela amostra:
+
+$n = 100 \\ \hat{p}= 8/100$
+
+Temos as hipóteses:
+
+$H_{0}: p_{0} = 10/100 \\ H_{1}: p_{0} < 10/100$
+
+Usamos como estatística de teste: 
+
+$Z = \frac{\hat{p} - p_{0}}{\sqrt{\frac{p_{0}(1-p_{0})}{n}}}$
+
+```{r}
+pZero <- 10/100
+pHat <- 8/100
+n <- 100
+  
+zed <- (pHat - pZero)/sqrt((pZero*(1-pZero))/n)
+zed
+```
+
+Para $\alpha = 8\%$ temos:
+
+```{r}
+testZ <- qnorm(0.08)
+testZ
+```
+
+Então a região crítica é $]-\infty, -1.405]$
+
+A estatística de teste não se encontra na região crítica, logo não rejeitamos $H_{0}$
 
 ### Questão 2
 
@@ -22,23 +52,128 @@ title: "Resolução da segunda prova"
 A. Utilizando um nível de significância de 5%, desejamos testar se a duração média de todas as lâmpadas dessa marca é igual ou diferente de 1600 horas. Qual é a conclusão?
 
 B. Determine também a probabilidade do erro do tipo II, se a média fosse 1620 horas. 
- 
+
+Temos: 
+
+$n = 100 \\ \bar{x} = 1615 \\ \sigma = 120$
 
 #### Solução
 
+##### (A)
+
+Para $\alpha = 5\%$, temos as hipóteses:
+
+$H_{0}: \mu_{0} = 1600 \\ H_{1}: \mu_{0} \neq 1600$
+
+Calculando as regiões críticas:
+
+```{r}
+testZ <- qnorm(0.025)
+testZ
+abs(testZ)
+```
+
+Temos a região crítica: $]-\infty,-1.959] \ \cup \ [1.959, +\infty[ $
+
+Utilizaremos a estatística de teste:
+
+$Z = \frac{\bar{x} - \mu_{0}}{\frac{\sigma}{\sqrt{n}}}}$
+
+```{r}
+xBar <- 1615
+muZero<- 1600
+n <- 100
+sigma <- 120
+  
+zed <- (xBar - muZero)/(sigma/sqrt(n))
+zed
+```
+
+Como a estatística de teste não se encontra na região crítica, não rejeitamos $H_{0}$.
+
+##### (B)
+
+$P(Erro \ tipo \ II) = \beta$ para $\mu{0} = 1620$
+$P(|\bar{x}| < Z_{c} \ | \ \mu = 1620) \\ P(1576.48 <\bar{x}< 1623.52 \ | \ \mu = 1620)$
+
+$z_{1} = \frac{1576.48 - 1620}{\frac{120}{10}} \\ z_{2} = \frac{1623.52 - 1620}{\frac{120}{10}}$
+
+```{r}
+z1 <- (1576.48 - 1620) / 12
+z2 <- (1623.52 - 1620) / 12
+z1
+z2
+```
+
+```{r}
+a <- pnorm(abs(z1)) - 0.5
+b <- pnorm(z2) - 0.5
+a+b
+```
+
+$\beta = 61.5 \%$
 
 ### Questão 3
 
 (2,0 pts) Sorteamos, ao acaso, 12 observações de uma variável aleatória que segue o modelo normal. Da amostra obtivemos média de 21,7 e desvio padrão 5,5. Determine o nível descritivo do teste $\mu = 18$ contra $\mu > 18$. 
 
-
 #### Solução
+
+$n = 12 \\ \bar{x} = 21.7 \\ S = 5.5$
+
+Temos as hipóteses: 
+
+$H_{0}: \mu_{0} = 18 \\ H_{1}: \mu_{0} \neq 18$
+
+Média com $\sigma$ desconhecido, usamos a t student para encontrar a região crítica com 11 níveis de liberdade
+
+Estatística de teste:
+
+$T = \frac{\bar{x} - {\mu_{0}}}{\frac{S}{\sqrt{n}}}$
+
+```{r}
+n <- 12
+xBar <- 21.7
+muZero <- 18
+S = 5.5
+
+tStat <- (xBar - muZero) / (S/sqrt(n)) 
+
+dt(tStat, n-1)/2
+```
+
+Nivel descritivo de 1.75%
 
 ### Questão 4
 
 (2,0 pts) O crescimento de bebês, durante o primeiro mês de vida, pode ser modelado pela distribuição normal. Admita que, em média, um crescimento de 5 centímetros ou mais seja considerado satisfatório. Deseja-se verificar se o crescimento de bebês de família em um bairro da periferia de São Paulo acompanha o padrão esperado. Para tanto, 10 recém-nascidos na região foram sorteados e sua altura acompanhada, fornecendo as seguintes medidas de crescimento em centímetros: 5.03, 5.02, 4.95, 4.96, 5.01, 4.97, 4.90, 4.91, 4.90 e 4.93. Ao nível de 5% de significância, o que se conclui?  
 
 #### Solução
+
+
+$H_{0}: \mu_{0} \geq 5 \\ H_{1}: \mu{0} < 5$
+
+Temos os dados:
+
+```{r}
+n <- 10
+mySample <- c(5.03, 5.02, 4.95, 4.96, 5.01, 4.97, 4.90, 4.91, 4.90, 4.93)
+xBar <- mean(mySample)
+mySd <- sd(mySample)
+muZero <- 5
+
+tStat <- (xBar - muZero) / (mySd/sqrt(n))
+tStat
+
+```
+
+E para $\alpha = 5%$
+
+```{r}
+qt(0.05, 9)
+```
+
+Como a estatística de teste se encontra na região crítica, rejeitamos $H_{0}$
 
 ### Questão 5
 
@@ -49,3 +184,13 @@ Amostra I : 7, 9, 3, 8, 11, 5 e 9
 Amostra II: 2, 7, 5, 15, 9, 16 e 8
 
 #### Solução
+
+```{r}
+sample1 <- c(7, 9, 3, 8, 11, 5, 9)
+sample2 <- c(2, 7, 5, 15, 9, 16, 8)
+
+t.test(sample1, sample2, alternative = "two.sided", var.equal = FALSE)
+
+```
+
+Temos o p-value maior que 0.05 então não rejeitamos $H_{0}$

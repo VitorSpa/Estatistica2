@@ -303,8 +303,8 @@ $(document).ready(function () {
 </div>
 
 
-<div id="prova-1" class="section level2 tabset tabset-fade">
-<h2>Prova 1</h2>
+<div id="section" class="section level2 tabset tabset-fade">
+<h2>19/09/2019</h2>
 <hr />
 <div id="questão-1" class="section level3">
 <h3>Questão 1</h3>
@@ -456,20 +456,44 @@ $(document).ready(function () {
 <p>Como não temos o P da população popdemos seguir por dois caminhos:</p>
 <p>Otimista: usar <span class="math inline">\(\hat{p}\)</span> Pessimista: assumir <span class="math inline">\(P = 0.5\)</span></p>
 <p>Utilizando <span class="math inline">\(\hat{p}\)</span>:</p>
+<pre class="r"><code>n &lt;- 50
+p &lt;- 18/50
+zed &lt;- abs(qnorm(0.015))
+
+ic &lt;- c(p - zed * sqrt((p*(1-p))/n), p + zed * sqrt((p*(1-p))/n))
+ic</code></pre>
 <pre><code>## [1] 0.2126894 0.5073106</code></pre>
 <p>Utilizando <span class="math inline">\(P = 0.5\)</span></p>
+<pre class="r"><code>n &lt;- 50
+p &lt;- 0.5
+zed &lt;- abs(qnorm(0.015))
+
+ic &lt;- c(p - zed * sqrt((p*(1-p))/n), p + zed * sqrt((p*(1-p))/n))
+ic</code></pre>
 <pre><code>## [1] 0.3465514 0.6534486</code></pre>
 </div>
 <div id="b-1" class="section level5">
 <h5>(B)</h5>
 <p>Para calcular <span class="math inline">\(n\)</span> com <span class="math inline">\(\epsilon &lt; 0.2\)</span> e <span class="math inline">\(P = \hat{p}\)</span> usamos:</p>
 <p><span class="math inline">\(n = \frac{z_{\alpha/2}^2 p(1-p)}{\epsilon^2}\)</span></p>
+<pre class="r"><code>erro &lt;- 0.2
+p &lt;- 18/50
+zed &lt;- abs(qnorm(0.015))
+
+n &lt;- zed^2 * p * (1-p) / erro^2
+n</code></pre>
 <pre><code>## [1] 27.12552</code></pre>
 <p>Devemos testar 28 capacetes</p>
 </div>
 <div id="c-1" class="section level5">
 <h5>(C)</h5>
 <p>Para calcular <span class="math inline">\(n\)</span> com <span class="math inline">\(\epsilon &lt; 0.2\)</span> e <span class="math inline">\(P = 0.5\)</span> usamos:</p>
+<pre class="r"><code>erro &lt;- 0.2
+p &lt;- 0.5
+zed &lt;- abs(qnorm(0.015))
+
+n &lt;- zed^2 * p * (1-p) / erro^2
+n</code></pre>
 <pre><code>## [1] 29.43308</code></pre>
 <p>Devemos testar 30 capacetes</p>
 </div>

@@ -2,7 +2,7 @@
 title: "Resolução da primeira prova"
 ---
 
-## Prova 1 {.tabset .tabset-fade}
+## 19/09/2019 {.tabset .tabset-fade}
 
 ---
 
@@ -213,7 +213,7 @@ Pessimista: assumir $P = 0.5$
 
 Utilizando $\hat{p}$:
 
-```{r, echo = FALSE}
+```{r}
 n <- 50
 p <- 18/50
 zed <- abs(qnorm(0.015))
@@ -224,7 +224,7 @@ ic
 
 Utilizando $P = 0.5$
 
-```{r, echo = FALSE}
+```{r}
 n <- 50
 p <- 0.5
 zed <- abs(qnorm(0.015))
@@ -239,7 +239,7 @@ Para calcular $n$ com $\epsilon < 0.2$ e $P = \hat{p}$ usamos:
 
 $n = \frac{z_{\alpha/2}^2 p(1-p)}{\epsilon^2}$
 
-```{r, echo = FALSE}
+```{r}
 erro <- 0.2
 p <- 18/50
 zed <- abs(qnorm(0.015))
@@ -254,7 +254,7 @@ Devemos testar 28 capacetes
 
 Para calcular $n$ com $\epsilon < 0.2$ e $P = 0.5$ usamos:
 
-```{r, echo = FALSE}
+```{r}
 erro <- 0.2
 p <- 0.5
 zed <- abs(qnorm(0.015))

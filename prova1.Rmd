@@ -147,11 +147,40 @@ Comparando com a letra **c**, a probabilidade diminuiu.
 (1,0 pt) O número de divórcios por indivíduo adulto casado, em certa comunidade, foi modelado pela variável aleatória $D$, cuja função de probabilidade é apresentada a seguir. Uma amostra representada por $(D_{1}, D_{2})$, foi sorteada com dois desses indivíduos e os seguintes estimadores, para a média de divórcios, foram considerados $\hat{\mu_{1}} = \sqrt{D_{1}D_{2}}$ e $\hat{\mu_{2}} = máximo - mínimo$. Para cada estimador, obtenha a distribuição de probabilidade e verifique se é viciado.
 
 ```{r, echo = FALSE}
-table_3 <- data.frame("D" = "p", "X0" = 0.5, "X1" = 0.4, "X2" = 0.05, "X3" = 0.05)
-table_3
+table_mu1 <- data.frame("mu1" = c(0, 1, sqrt(2), sqrt(5), 2, sqrt(6), 3), "P(mu1)" = c(0.75, 0.16, 0.04, 0.04, 0.0025, 0.005, 0.0025))
+table_mu2 <- data.frame("mu2" = c(0, 1, 2, 3), "P(mu2)" = c(0.415, 0.445, 0.09, 0.05))
+table_d <- data.frame("D" = c(0, 0.5, 1, 1.5, 2, 2.5, 3), "P(D)" = c(0.25, 0.4, 0.21, 0.09, 0.0425, 0.005, 0.0025))
+table_mu1
+table_mu2
+table_d
 ```
 
 #### Solução
+
+Calculando os valores esperados:
+
+$E(\hat{\mu_{1}}) =  ...$
+
+```{r, echo = FALSE}
+expected_mu1 <- sum(table_mu1$mu1 * table_mu1$P.mu1.)
+expected_mu1
+```
+
+$E(\hat{\mu_{2}}) =  ...$
+
+```{r, echo = FALSE}
+expected_mu2 <- sum(table_mu2$mu2 * table_mu2$P.mu2.)
+expected_mu2
+```
+
+$E(D) =  ...$
+
+```{r, echo = FALSE}
+expected_d <- sum(table_d$D * table_d$P.D.)
+expected_d
+```
+
+Como temos que $E(\hat{\mu_{1}}) \neq E(D)$ e $E(\hat{\mu_{2}}) \neq E(D)$ os dois estimadores são viciados.
 
 ### Questão 4
  
@@ -164,6 +193,77 @@ B. (0.5 pt) Usando a estimativa $p$, obtida a partir da amostra preliminar de 50
 C. (0.5 pt) Quão grande terá de ser a amostra se desejarmos estar no mínimo 97% confiantes de que o erro na estimação $p$ seja menor do que 0,02 independente do valor verdadeiro de $p$ ?
 
 #### Solução
+
+Temos que:
+
+$n = 50 \\ \hat{p} = 18/50 \\ \alpha = 97$
+
+##### (A)
+
+O intervalo de confiânça é dado por $[\hat{p} - \epsilon;\hat{p} + \epsilon]$
+
+Onde:
+
+$\epsilon = z_{\alpha/2} * \sqrt{\frac{p(1-p)}{n}}$
+
+Como não temos o P da população popdemos seguir por dois caminhos:
+
+Otimista: usar $\hat{p}$
+Pessimista: assumir $P = 0.5$
+
+Utilizando $\hat{p}$:
+
+```{r, echo = FALSE}
+n <- 50
+p <- 18/50
+zed <- abs(qnorm(0.015))
+
+ic <- c(p - zed * sqrt((p*(1-p))/n), p + zed * sqrt((p*(1-p))/n))
+ic
+```
+
+Utilizando $P = 0.5$
+
+```{r, echo = FALSE}
+n <- 50
+p <- 0.5
+zed <- abs(qnorm(0.015))
+
+ic <- c(p - zed * sqrt((p*(1-p))/n), p + zed * sqrt((p*(1-p))/n))
+ic
+```
+
+##### (B)
+
+Para calcular $n$ com $\epsilon < 0.2$ e $P = \hat{p}$ usamos:
+
+$n = \frac{z_{\alpha/2}^2 p(1-p)}{\epsilon^2}$
+
+```{r, echo = FALSE}
+erro <- 0.2
+p <- 18/50
+zed <- abs(qnorm(0.015))
+
+n <- zed^2 * p * (1-p) / erro^2
+n
+```
+
+Devemos testar 28 capacetes
+
+##### (C)
+
+Para calcular $n$ com $\epsilon < 0.2$ e $P = 0.5$ usamos:
+
+```{r, echo = FALSE}
+erro <- 0.2
+p <- 0.5
+zed <- abs(qnorm(0.015))
+
+n <- zed^2 * p * (1-p) / erro^2
+n
+```
+
+Devemos testar 30 capacetes
 
 ### Questão 5
 

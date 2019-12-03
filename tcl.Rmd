@@ -30,10 +30,9 @@ nSamples <- 1000
 
 
 ### Distribuições Discretas {.tabset .tabset-fade}
-
 #### Bernoulli {.tabset .tabset-fade}
 
-A distribuição de Bernoulli tem parâmetros p e apresenta:
+A distribuição de Bernoulli tem parâmetro $p$ e apresenta:
 
 $X \sim Bern(p)$
 
@@ -41,7 +40,7 @@ $E(X) = p$ e $Var(X) = p(1-p)$
 
 ##### Para $p = 0.5$ 
 
-Teríamos então $E(X) = 0.5$ e $Var(X) = 0.00025$
+Teríamos então $E(\bar{X}) = 0.5$ e $Var(\bar{X}) = 0.00025$
 
 ```{r}
 bernMeans <- NULL
@@ -54,18 +53,17 @@ for (size in sampleSizes){
   aux <- c(aux, mean(rbinom(size, 1, 0.5)))
   }
   print(c("Tamanho da amostra:", size))
-  plot_list <- c(plot_list, hist(aux, main = "Histograma das médias", xlab = "Média", ylab = "Freq", xlim = c(0,1), ylim = c(0,500), col = "darkgrey"))
+  plot_list <- c(plot_list, hist(aux, main = "Histograma das médias", xlab = "Média", ylab = "Freq", col = "darkgrey"))
   bernMeans <- c(bernMeans, mean(aux))
   bernVars  <- c(bernVars, var(aux))
 }  
 bernMeans 
 bernVars
-
 ```
 
 ##### Para $p = 0.7$ 
 
-Teríamos então $E(X) = 0.7$ e $Var(X) = 0.00021$
+Teríamos então $E(\bar{X}) = 0.7$ e $Var(\bar{X}) = 0.00021$
 
 ```{r}
 bernMeans <- NULL
@@ -78,7 +76,7 @@ for (size in sampleSizes){
   aux <- c(aux, mean(rbinom(size, 1, 0.7)))
   }
   print(c("Tamanho da amostra:", size))
-  plot_list <- c(plot_list, hist(aux, main = "Histograma das médias", xlab = "Média", ylab = "Freq", xlim = c(0,1), ylim = c(0,500), col = "darkgrey"))
+  plot_list <- c(plot_list, hist(aux, main = "Histograma das médias", xlab = "Média", ylab = "Freq", col = "darkgrey"))
   bernMeans <- c(bernMeans, mean(aux))
   bernVars  <- c(bernVars, var(aux))
 }  
@@ -86,24 +84,493 @@ bernMeans
 bernVars
 ```
 
-#### Binomial
+#### Binomial {.tabset .tabset-fade}
 
-#### Geométrica
+A distribuição de Bernoulli tem parâmetros $n$ e $p$ e apresenta:
 
-#### Poisson
+$X \sim Binom(n,p)$
 
+$E(X) = np$ e $Var(X) = np(1-p)$
+
+##### $n = 5$ e $p = 0.5$ 
+
+Teríamos então $E(\bar{X}) = 2.5$ e $Var(\bar{X}) = 1.25$
+
+```{r}
+bernMeans <- NULL
+bernVars <- NULL
+plot_list <- NULL
+
+for (size in sampleSizes){
+  aux <- NULL
+  for(i in 1:1000){
+  aux <- c(aux, mean(rbinom(size, 5, 0.5)))
+  }
+  print(c("Tamanho da amostra:", size))
+  plot_list <- c(plot_list, hist(aux, main = "Histograma das médias", xlab = "Média", ylab = "Freq", col = "darkgrey"))
+  bernMeans <- c(bernMeans, mean(aux))
+  bernVars  <- c(bernVars, var(aux))
+}  
+bernMeans 
+bernVars
+```
+
+##### $n = 10$ e $p = 0.3$
+
+Teríamos então $E(\bar{X}) = 3$ e $Var(\bar{X}) = 2.1$
+
+```{r}
+bernMeans <- NULL
+bernVars <- NULL
+plot_list <- NULL
+
+for (size in sampleSizes){
+  aux <- NULL
+  for(i in 1:1000){
+  aux <- c(aux, mean(rbinom(size, 10, 0.3)))
+  }
+  print(c("Tamanho da amostra:", size))
+  plot_list <- c(plot_list, hist(aux, main = "Histograma das médias", xlab = "Média", ylab = "Freq", col = "darkgrey"))
+  bernMeans <- c(bernMeans, mean(aux))
+  bernVars  <- c(bernVars, var(aux))
+}  
+bernMeans 
+bernVars
+```
+
+#### Geométrica {.tabset .tabset-fade}
+
+A distribuição Geométrica tem parâmetros $n$ e $p$ e apresenta:
+
+$X \sim Geom(n, p)$
+
+$E(X) = \frac{1-p}{p}$ e $Var(X) = \frac{1-p}{p^2}$
+
+##### $p = 0.5$
+
+Teríamos então $E(\bar{X}) = 1$ e $Var(\bar{X}) = 0.002$
+
+```{r}
+bernMeans <- NULL
+bernVars <- NULL
+plot_list <- NULL
+
+for (size in sampleSizes){
+  aux <- NULL
+  for(i in 1:1000){
+  aux <- c(aux, mean((rgeom(size, 0.5))))
+  }
+  print(c("Tamanho da amostra:", size))
+  plot_list <- c(plot_list, hist(aux, main = "Histograma das médias", xlab = "Média", ylab = "Freq", col = "darkgrey"))
+  bernMeans <- c(bernMeans, mean(aux))
+  bernVars  <- c(bernVars, var(aux))
+}  
+bernMeans 
+bernVars
+```
+
+##### $p = 0.85$
+
+Teríamos então $E(\bar{X}) = 0.1765$ e $Var(\bar{X}) = 0.00021$
+
+```{r}
+bernMeans <- NULL
+bernVars <- NULL
+plot_list <- NULL
+
+for (size in sampleSizes){
+  aux <- NULL
+  for(i in 1:1000){
+  aux <- c(aux, mean(rgeom(size, 0.85)))
+  }
+  print(c("Tamanho da amostra:", size))
+  plot_list <- c(plot_list, hist(aux, main = "Histograma das médias", xlab = "Média", ylab = "Freq", col = "darkgrey"))
+  bernMeans <- c(bernMeans, mean(aux))
+  bernVars  <- c(bernVars, var(aux))
+}  
+bernMeans 
+bernVars
+```
+
+#### Poisson {.tabset .tabset-fade}
+
+A distribuição de Poisson tem parâmetros $\lambda$ e apresenta:
+
+$X \sim Poisson(\lambda)$
+
+$E(X) = \lambda$ e $Var(X) = \lambda$
+
+##### Para $\lambda = 4$ 
+
+Teríamos então $E(\bar{X}) = 4$ e $Var(\bar{X}) = 0.004$
+
+```{r}
+bernMeans <- NULL
+bernVars <- NULL
+plot_list <- NULL
+
+for (size in sampleSizes){
+  aux <- NULL
+  for(i in 1:1000){
+  aux <- c(aux, mean(rpois(size, 4)))
+  }
+  print(c("Tamanho da amostra:", size))
+  plot_list <- c(plot_list, hist(aux, main = "Histograma das médias", xlab = "Média", ylab = "Freq", col = "darkgrey"))
+  bernMeans <- c(bernMeans, mean(aux))
+  bernVars  <- c(bernVars, var(aux))
+}  
+bernMeans 
+bernVars
+```
+
+##### Para $\lambda = 6$ 
+
+Teríamos então $E(\bar{X}) = 6$ e $Var(\bar{X}) = 0.006$
+
+```{r}
+bernMeans <- NULL
+bernVars <- NULL
+plot_list <- NULL
+
+for (size in sampleSizes){
+  aux <- NULL
+  for(i in 1:1000){
+  aux <- c(aux, mean(rpois(size, 6)))
+  }
+  print(c("Tamanho da amostra:", size))
+  plot_list <- c(plot_list, hist(aux, main = "Histograma das médias", xlab = "Média", ylab = "Freq", col = "darkgrey"))
+  bernMeans <- c(bernMeans, mean(aux))
+  bernVars  <- c(bernVars, var(aux))
+}  
+bernMeans 
+bernVars
+```
 ### Distribuições Contínuas {.tabset .tabset-fade}
+#### Uniforme {.tabset .tabset-fade}
 
-#### Uniforme
+A distribuição Uniforme tem parâmetro $a$ e $b$ e apresenta:
 
-#### Normal
+$X \sim Uniforme(a,b)$
 
-#### Exponencial 
+$E(X) = \frac{1}{2}(a+b)$ e $Var(X) = \frac{1}{12}(b-a)^2$
 
-#### t-Student
+##### Para $a = 0$ e $b = 3$
 
-#### chi-Quadrado
+Teríamos então $E(\bar{X}) = 1.5$ e $Var(\bar{X}) = 0.00075$
 
-#### Fisher-Snedecor
+```{r}
+bernMeans <- NULL
+bernVars <- NULL
+plot_list <- NULL
+
+for (size in sampleSizes){
+  aux <- NULL
+  for(i in 1:1000){
+  aux <- c(aux, mean(runif(size, min = 0, max = 3)))
+  }
+  print(c("Tamanho da amostra:", size))
+  plot_list <- c(plot_list, hist(aux, main = "Histograma das médias", xlab = "Média", ylab = "Freq", col = "darkgrey"))
+  bernMeans <- c(bernMeans, mean(aux))
+  bernVars  <- c(bernVars, var(aux))
+}  
+bernMeans 
+bernVars
+```
+
+##### Para $a = 1$ e $b = 5$
+
+Teríamos então $E(\bar{X}) = 3$ e $Var(\bar{X}) = 0.0013333$
+
+```{r}
+bernMeans <- NULL
+bernVars <- NULL
+plot_list <- NULL
+
+for (size in sampleSizes){
+  aux <- NULL
+  for(i in 1:1000){
+  aux <- c(aux, mean(runif(size, min = 1, max = 5)))
+  }
+  print(c("Tamanho da amostra:", size))
+  plot_list <- c(plot_list, hist(aux, main = "Histograma das médias", xlab = "Média", ylab = "Freq", col = "darkgrey"))
+  bernMeans <- c(bernMeans, mean(aux))
+  bernVars  <- c(bernVars, var(aux))
+}  
+bernMeans 
+bernVars
+```
+
+#### Normal {.tabset .tabset-fade}
+
+A distribuição Normal tem parâmetros $\mu$ e $\sigma^2$ e apresenta:
+
+$X \sim Normal(\mu,\sigma^2)$
+
+$E(X) = \mu$ e $Var(X) = \sigma^2$
+
+##### Para $\mu = 5$ e $\sigma^2 = 1.5$
+
+Teríamos então $E(\bar{X}) = 5$ e $Var(\bar{X}) = 0.0015$
+
+```{r}
+bernMeans <- NULL
+bernVars <- NULL
+plot_list <- NULL
+
+for (size in sampleSizes){
+  aux <- NULL
+  for(i in 1:1000){
+  aux <- c(aux, mean(rnorm(size, mean = 5, sd = sqrt(1.5))))
+  }
+  print(c("Tamanho da amostra:", size))
+  plot_list <- c(plot_list, hist(aux, main = "Histograma das médias", xlab = "Média", ylab = "Freq", col = "darkgrey"))
+  bernMeans <- c(bernMeans, mean(aux))
+  bernVars  <- c(bernVars, var(aux))
+}  
+bernMeans 
+bernVars
+```
+
+
+##### Para $\mu = 110$ e $\sigma^2 = 20$
+
+Teríamos então $E(\bar{X}) = 110$ e $Var(\bar{X}) = 0.02$
+
+```{r}
+bernMeans <- NULL
+bernVars <- NULL
+plot_list <- NULL
+
+for (size in sampleSizes){
+  aux <- NULL
+  for(i in 1:1000){
+  aux <- c(aux, mean(rnorm(size, mean = 110, sd = sqrt(20))))
+  }
+  print(c("Tamanho da amostra:", size))
+  plot_list <- c(plot_list, hist(aux, main = "Histograma das médias", xlab = "Média", ylab = "Freq", col = "darkgrey"))
+  bernMeans <- c(bernMeans, mean(aux))
+  bernVars  <- c(bernVars, var(aux))
+}  
+bernMeans 
+bernVars
+```
+
+
+#### Exponencial {.tabset .tabset-fade}
+
+A distribuição Exponencial tem parâmetro $\lambda$ e apresenta:
+
+$X \sim Exp(\lambda)$
+
+$E(X) = \frac{1}{\lambda}$ e $Var(X) = \frac{1}{\lambda^2}$
+
+##### Para $\lambda = 5$
+
+Teríamos então $E(\bar{X}) = 0.2$ e $Var(\bar{X}) = 0.00004$
+
+```{r}
+bernMeans <- NULL
+bernVars <- NULL
+plot_list <- NULL
+
+for (size in sampleSizes){
+  aux <- NULL
+  for(i in 1:1000){
+  aux <- c(aux, mean(rexp(size, rate = 5)))
+  }
+  print(c("Tamanho da amostra:", size))
+  plot_list <- c(plot_list, hist(aux, main = "Histograma das médias", xlab = "Média", ylab = "Freq", col = "darkgrey"))
+  bernMeans <- c(bernMeans, mean(aux))
+  bernVars  <- c(bernVars, var(aux))
+}  
+bernMeans 
+bernVars
+```
+
+##### Para $\lambda = 15$
+
+Teríamos então $E(\bar{X}) = 0.066667$ e $Var(\bar{X}) = 0.0000004444$
+
+```{r}
+bernMeans <- NULL
+bernVars <- NULL
+plot_list <- NULL
+
+for (size in sampleSizes){
+  aux <- NULL
+  for(i in 1:1000){
+  aux <- c(aux, mean(rexp(size, rate = 15)))
+  }
+  print(c("Tamanho da amostra:", size))
+  plot_list <- c(plot_list, hist(aux, main = "Histograma das médias", xlab = "Média", ylab = "Freq", col = "darkgrey"))
+  bernMeans <- c(bernMeans, mean(aux))
+  bernVars  <- c(bernVars, var(aux))
+}  
+bernMeans 
+bernVars
+```
+
+#### t-Student {.tabset .tabset-fade}
+
+A distribuição t-Student tem parâmetro $\nu = n-1$ e apresenta:
+
+$X \sim Exp(\lambda)$
+
+$E(X) = 0$ e $Var(X) = \frac{\nu}{\nu-2}$
+
+##### Para $\nu = 11$
+
+Teríamos então $E(\bar{X}) = 0$ e $Var(\bar{X}) = 0.001222222$
+
+```{r}
+bernMeans <- NULL
+bernVars <- NULL
+plot_list <- NULL
+
+for (size in sampleSizes){
+  aux <- NULL
+  for(i in 1:1000){
+  aux <- c(aux, mean(rt(size, 11, ncp = 0)))
+  }
+  print(c("Tamanho da amostra:", size))
+  plot_list <- c(plot_list, hist(aux, main = "Histograma das médias", xlab = "Média", ylab = "Freq", col = "darkgrey"))
+  bernMeans <- c(bernMeans, mean(aux))
+  bernVars  <- c(bernVars, var(aux))
+}  
+bernMeans 
+bernVars
+```
+
+##### Para $\nu = 25$
+
+Teríamos então $E(\bar{X}) = 0$ e $Var(\bar{X}) = 0.001086957$
+
+```{r}
+bernMeans <- NULL
+bernVars <- NULL
+plot_list <- NULL
+
+for (size in sampleSizes){
+  aux <- NULL
+  for(i in 1:1000){
+  aux <- c(aux, mean(rt(size, 25, ncp = 0)))
+  }
+  print(c("Tamanho da amostra:", size))
+  plot_list <- c(plot_list, hist(aux, main = "Histograma das médias", xlab = "Média", ylab = "Freq", col = "darkgrey"))
+  bernMeans <- c(bernMeans, mean(aux))
+  bernVars  <- c(bernVars, var(aux))
+}  
+bernMeans 
+bernVars
+```
+
+#### chi-Quadrado {.tabset .tabset-fade}
+
+A distribuição chi-Quadrado tem parâmetro $k$ e apresenta:
+
+$X \sim \chi^2(K)$
+
+$E(X) = K$ e $Var(X) = 2K$
+
+##### Para $K = 3$
+
+Teríamos então $E(\bar{X}) = 3$ e $Var(\bar{X}) = 0.006$
+
+```{r}
+bernMeans <- NULL
+bernVars <- NULL
+plot_list <- NULL
+
+for (size in sampleSizes){
+  aux <- NULL
+  for(i in 1:1000){
+  aux <- c(aux, mean(rchisq(size, 3, ncp=0)))
+  }
+  print(c("Tamanho da amostra:", size))
+  plot_list <- c(plot_list, hist(aux, main = "Histograma das médias", xlab = "Média", ylab = "Freq", col = "darkgrey"))
+  bernMeans <- c(bernMeans, mean(aux))
+  bernVars  <- c(bernVars, var(aux))
+}  
+bernMeans 
+bernVars
+```
+
+##### Para $K = 10$
+
+Teríamos então $E(\bar{X}) = 10$ e $Var(\bar{X}) = 0.02$
+
+```{r}
+bernMeans <- NULL
+bernVars <- NULL
+plot_list <- NULL
+
+for (size in sampleSizes){
+  aux <- NULL
+  for(i in 1:1000){
+  aux <- c(aux, mean(rchisq(size, 10, ncp=0)))
+  }
+  print(c("Tamanho da amostra:", size))
+  plot_list <- c(plot_list, hist(aux, main = "Histograma das médias", xlab = "Média", ylab = "Freq", col = "darkgrey"))
+  bernMeans <- c(bernMeans, mean(aux))
+  bernVars  <- c(bernVars, var(aux))
+}  
+bernMeans 
+bernVars
+```
+
+
+#### Fisher-Snedecor {.tabset .tabset-fade}
+
+A distribuição F de Fisher-Snedecor tem parâmetros $d_{1}$ e $d_{2}$ e apresenta:
+
+$X \sim F(d_{1},d_{2})$
+
+$E(X) = \frac{d_{2}}{d_{2}-2}$ e $Var(X) = \frac{2d_{2}^2(d_{1}+d_{2}-2)}{d_{1}(d_{2}-2)^2(d_{2}-4)}$
+
+##### Para $d_{1}= 9 $ e $d_{2}= 5$ 
+
+Teríamos então $E(\bar{X}) = 1.66667$ e $Var(\bar{X}) = 0.007407407$
+
+```{r}
+bernMeans <- NULL
+bernVars <- NULL
+plot_list <- NULL
+
+for (size in sampleSizes){
+  aux <- NULL
+  for(i in 1:1000){
+  aux <- c(aux, mean(rf(size, 9, 5, ncp = 0)))
+  }
+  print(c("Tamanho da amostra:", size))
+  plot_list <- c(plot_list, hist(aux, main = "Histograma das médias", xlab = "Média", ylab = "Freq", col = "darkgrey"))
+  bernMeans <- c(bernMeans, mean(aux))
+  bernVars  <- c(bernVars, var(aux))
+}  
+bernMeans 
+bernVars
+```
+
+##### Para $d_{1}= 15 $ e $d_{2}= 6$ 
+
+Teríamos então $E(\bar{X}) = 1.5$ e $Var(\bar{X}) = 0.00285$
+
+```{r}
+bernMeans <- NULL
+bernVars <- NULL
+plot_list <- NULL
+
+for (size in sampleSizes){
+  aux <- NULL
+  for(i in 1:1000){
+  aux <- c(aux, mean(rf(size, 15, 6, ncp = 0)))
+  }
+  print(c("Tamanho da amostra:", size))
+  plot_list <- c(plot_list, hist(aux, main = "Histograma das médias", xlab = "Média", ylab = "Freq", col = "darkgrey"))
+  bernMeans <- c(bernMeans, mean(aux))
+  bernVars  <- c(bernVars, var(aux))
+}  
+bernMeans 
+bernVars
+```
 
 ### Conclusão

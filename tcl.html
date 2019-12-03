@@ -321,12 +321,12 @@ $(document).ready(function () {
 <h3>Distribuições Discretas</h3>
 <div id="bernoulli" class="section level4 tabset tabset-fade">
 <h4>Bernoulli</h4>
-<p>A distribuição de Bernoulli tem parâmetros p e apresenta:</p>
+<p>A distribuição de Bernoulli tem parâmetro <span class="math inline">\(p\)</span> e apresenta:</p>
 <p><span class="math inline">\(X \sim Bern(p)\)</span></p>
 <p><span class="math inline">\(E(X) = p\)</span> e <span class="math inline">\(Var(X) = p(1-p)\)</span></p>
 <div id="para-p-0.5" class="section level5">
 <h5>Para <span class="math inline">\(p = 0.5\)</span></h5>
-<p>Teríamos então <span class="math inline">\(E(X) = 0.5\)</span> e <span class="math inline">\(Var(X) = 0.00025\)</span></p>
+<p>Teríamos então <span class="math inline">\(E(\bar{X}) = 0.5\)</span> e <span class="math inline">\(Var(\bar{X}) = 0.00025\)</span></p>
 <pre class="r"><code>bernMeans &lt;- NULL
 bernVars &lt;- NULL
 plot_list &lt;- NULL
@@ -337,7 +337,7 @@ for (size in sampleSizes){
   aux &lt;- c(aux, mean(rbinom(size, 1, 0.5)))
   }
   print(c(&quot;Tamanho da amostra:&quot;, size))
-  plot_list &lt;- c(plot_list, hist(aux, main = &quot;Histograma das médias&quot;, xlab = &quot;Média&quot;, ylab = &quot;Freq&quot;, xlim = c(0,1), ylim = c(0,500), col = &quot;darkgrey&quot;))
+  plot_list &lt;- c(plot_list, hist(aux, main = &quot;Histograma das médias&quot;, xlab = &quot;Média&quot;, ylab = &quot;Freq&quot;, col = &quot;darkgrey&quot;))
   bernMeans &lt;- c(bernMeans, mean(aux))
   bernVars  &lt;- c(bernVars, var(aux))
 }  </code></pre>
@@ -372,17 +372,17 @@ for (size in sampleSizes){
 <pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;1000&quot;</code></pre>
 <p><img src="tcl_files/figure-html/unnamed-chunk-3-15.png" width="672" /></p>
 <pre class="r"><code>bernMeans </code></pre>
-<pre><code>##  [1] 0.4894000 0.4977000 0.5040667 0.4977000 0.5002000 0.5004333 0.4979143
-##  [8] 0.5053750 0.4992667 0.5011800 0.4997867 0.5004700 0.4990800 0.5009820
-## [15] 0.5007460</code></pre>
+<pre><code>##  [1] 0.4988000 0.5018000 0.5022667 0.4952500 0.4996400 0.5021000 0.4982857
+##  [8] 0.5008500 0.5058000 0.5006400 0.4993067 0.4990500 0.4998760 0.4995500
+## [15] 0.5007080</code></pre>
 <pre class="r"><code>bernVars</code></pre>
-<pre><code>##  [1] 0.0516993393 0.0241288388 0.0170138094 0.0127474575 0.0097889489
-##  [6] 0.0081446235 0.0071554583 0.0064118963 0.0050830638 0.0048230306
-## [11] 0.0031693461 0.0027606397 0.0009893910 0.0004965602 0.0002818613</code></pre>
+<pre><code>##  [1] 0.0503689289 0.0249216817 0.0171675854 0.0117466842 0.0104615319
+##  [6] 0.0090279513 0.0069542195 0.0062042317 0.0057370353 0.0052384288
+## [11] 0.0035419056 0.0024518493 0.0009995282 0.0004810025 0.0002526774</code></pre>
 </div>
 <div id="para-p-0.7" class="section level5">
 <h5>Para <span class="math inline">\(p = 0.7\)</span></h5>
-<p>Teríamos então <span class="math inline">\(E(X) = 0.7\)</span> e <span class="math inline">\(Var(X) = 0.00021\)</span></p>
+<p>Teríamos então <span class="math inline">\(E(\bar{X}) = 0.7\)</span> e <span class="math inline">\(Var(\bar{X}) = 0.00021\)</span></p>
 <pre class="r"><code>bernMeans &lt;- NULL
 bernVars &lt;- NULL
 plot_list &lt;- NULL
@@ -393,7 +393,7 @@ for (size in sampleSizes){
   aux &lt;- c(aux, mean(rbinom(size, 1, 0.7)))
   }
   print(c(&quot;Tamanho da amostra:&quot;, size))
-  plot_list &lt;- c(plot_list, hist(aux, main = &quot;Histograma das médias&quot;, xlab = &quot;Média&quot;, ylab = &quot;Freq&quot;, xlim = c(0,1), ylim = c(0,500), col = &quot;darkgrey&quot;))
+  plot_list &lt;- c(plot_list, hist(aux, main = &quot;Histograma das médias&quot;, xlab = &quot;Média&quot;, ylab = &quot;Freq&quot;, col = &quot;darkgrey&quot;))
   bernMeans &lt;- c(bernMeans, mean(aux))
   bernVars  &lt;- c(bernVars, var(aux))
 }  </code></pre>
@@ -428,44 +428,1079 @@ for (size in sampleSizes){
 <pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;1000&quot;</code></pre>
 <p><img src="tcl_files/figure-html/unnamed-chunk-4-15.png" width="672" /></p>
 <pre class="r"><code>bernMeans </code></pre>
-<pre><code>##  [1] 0.6942000 0.7023000 0.7032000 0.6991000 0.7006800 0.7002000 0.6956857
-##  [8] 0.7001000 0.6976000 0.6979800 0.7016000 0.7000300 0.7003320 0.7007800
-## [15] 0.6996170</code></pre>
+<pre><code>##  [1] 0.7028000 0.6982000 0.6988000 0.6993500 0.7015200 0.7000333 0.6976857
+##  [8] 0.6994750 0.7007111 0.6997400 0.6993467 0.7025400 0.7002600 0.6990040
+## [15] 0.7001680</code></pre>
 <pre class="r"><code>bernVars</code></pre>
-<pre><code>##  [1] 0.0444908509 0.0188035135 0.0140927416 0.0099891792 0.0085713089
-##  [6] 0.0066977689 0.0061916602 0.0051551451 0.0045054121 0.0042157353
-## [11] 0.0028123412 0.0020121112 0.0008410668 0.0004201397 0.0002015559</code></pre>
+<pre><code>##  [1] 0.0417939540 0.0195963564 0.0145019508 0.0108178954 0.0078167063
+##  [6] 0.0069502825 0.0057522330 0.0047463457 0.0053401431 0.0041516841
+## [11] 0.0027454297 0.0021581065 0.0007978342 0.0004132292 0.0002014172</code></pre>
 </div>
 </div>
-<div id="binomial" class="section level4">
+<div id="binomial" class="section level4 tabset tabset-fade">
 <h4>Binomial</h4>
+<p>A distribuição de Bernoulli tem parâmetros <span class="math inline">\(n\)</span> e <span class="math inline">\(p\)</span> e apresenta:</p>
+<p><span class="math inline">\(X \sim Binom(n,p)\)</span></p>
+<p><span class="math inline">\(E(X) = np\)</span> e <span class="math inline">\(Var(X) = np(1-p)\)</span></p>
+<div id="n-5-e-p-0.5" class="section level5">
+<h5><span class="math inline">\(n = 5\)</span> e <span class="math inline">\(p = 0.5\)</span></h5>
+<p>Teríamos então <span class="math inline">\(E(\bar{X}) = 2.5\)</span> e <span class="math inline">\(Var(\bar{X}) = 1.25\)</span></p>
+<pre class="r"><code>bernMeans &lt;- NULL
+bernVars &lt;- NULL
+plot_list &lt;- NULL
+
+for (size in sampleSizes){
+  aux &lt;- NULL
+  for(i in 1:1000){
+  aux &lt;- c(aux, mean(rbinom(size, 5, 0.5)))
+  }
+  print(c(&quot;Tamanho da amostra:&quot;, size))
+  plot_list &lt;- c(plot_list, hist(aux, main = &quot;Histograma das médias&quot;, xlab = &quot;Média&quot;, ylab = &quot;Freq&quot;, col = &quot;darkgrey&quot;))
+  bernMeans &lt;- c(bernMeans, mean(aux))
+  bernVars  &lt;- c(bernVars, var(aux))
+}  </code></pre>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;5&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;10&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-5-2.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;15&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-5-3.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;20&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-5-4.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;25&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-5-5.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;30&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-5-6.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;35&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-5-7.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;40&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-5-8.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;45&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-5-9.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;50&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-5-10.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;75&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-5-11.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;100&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-5-12.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;250&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-5-13.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;500&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-5-14.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;1000&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-5-15.png" width="672" /></p>
+<pre class="r"><code>bernMeans </code></pre>
+<pre><code>##  [1] 2.482000 2.497700 2.500133 2.506300 2.502720 2.500033 2.497200
+##  [8] 2.494650 2.504178 2.498220 2.502533 2.496260 2.496512 2.499682
+## [15] 2.500849</code></pre>
+<pre class="r"><code>bernVars</code></pre>
+<pre><code>##  [1] 0.265621622 0.128413123 0.086904665 0.061156466 0.050423825
+##  [6] 0.044514513 0.035745456 0.030067695 0.029197917 0.025245677
+## [11] 0.016164057 0.012631043 0.005039882 0.002459643 0.001333902</code></pre>
 </div>
-<div id="geométrica" class="section level4">
+<div id="n-10-e-p-0.3" class="section level5">
+<h5><span class="math inline">\(n = 10\)</span> e <span class="math inline">\(p = 0.3\)</span></h5>
+<p>Teríamos então <span class="math inline">\(E(\bar{X}) = 3\)</span> e <span class="math inline">\(Var(\bar{X}) = 2.1\)</span></p>
+<pre class="r"><code>bernMeans &lt;- NULL
+bernVars &lt;- NULL
+plot_list &lt;- NULL
+
+for (size in sampleSizes){
+  aux &lt;- NULL
+  for(i in 1:1000){
+  aux &lt;- c(aux, mean(rbinom(size, 10, 0.3)))
+  }
+  print(c(&quot;Tamanho da amostra:&quot;, size))
+  plot_list &lt;- c(plot_list, hist(aux, main = &quot;Histograma das médias&quot;, xlab = &quot;Média&quot;, ylab = &quot;Freq&quot;, col = &quot;darkgrey&quot;))
+  bernMeans &lt;- c(bernMeans, mean(aux))
+  bernVars  &lt;- c(bernVars, var(aux))
+}  </code></pre>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;5&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;10&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-6-2.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;15&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-6-3.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;20&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-6-4.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;25&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-6-5.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;30&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-6-6.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;35&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-6-7.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;40&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-6-8.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;45&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-6-9.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;50&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-6-10.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;75&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-6-11.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;100&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-6-12.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;250&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-6-13.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;500&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-6-14.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;1000&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-6-15.png" width="672" /></p>
+<pre class="r"><code>bernMeans </code></pre>
+<pre><code>##  [1] 3.028200 3.006700 3.006133 2.999850 2.967440 3.003300 2.987400
+##  [8] 2.998625 3.005311 2.993560 2.995760 3.001950 3.002600 2.997458
+## [15] 3.000157</code></pre>
+<pre class="r"><code>bernVars</code></pre>
+<pre><code>##  [1] 0.420465225 0.218683794 0.140529578 0.110072550 0.077670317
+##  [6] 0.074678233 0.059854564 0.051056040 0.048242751 0.041941268
+## [11] 0.030140163 0.021115413 0.008156052 0.003878124 0.002082597</code></pre>
+</div>
+</div>
+<div id="geométrica" class="section level4 tabset tabset-fade">
 <h4>Geométrica</h4>
+<p>A distribuição Geométrica tem parâmetros <span class="math inline">\(n\)</span> e <span class="math inline">\(p\)</span> e apresenta:</p>
+<p><span class="math inline">\(X \sim Geom(n, p)\)</span></p>
+<p><span class="math inline">\(E(X) = \frac{1-p}{p}\)</span> e <span class="math inline">\(Var(X) = \frac{1-p}{p^2}\)</span></p>
+<div id="p-0.5" class="section level5">
+<h5><span class="math inline">\(p = 0.5\)</span></h5>
+<p>Teríamos então <span class="math inline">\(E(\bar{X}) = 1\)</span> e <span class="math inline">\(Var(\bar{X}) = 0.002\)</span></p>
+<pre class="r"><code>bernMeans &lt;- NULL
+bernVars &lt;- NULL
+plot_list &lt;- NULL
+
+for (size in sampleSizes){
+  aux &lt;- NULL
+  for(i in 1:1000){
+  aux &lt;- c(aux, mean((rgeom(size, 0.5))))
+  }
+  print(c(&quot;Tamanho da amostra:&quot;, size))
+  plot_list &lt;- c(plot_list, hist(aux, main = &quot;Histograma das médias&quot;, xlab = &quot;Média&quot;, ylab = &quot;Freq&quot;, col = &quot;darkgrey&quot;))
+  bernMeans &lt;- c(bernMeans, mean(aux))
+  bernVars  &lt;- c(bernVars, var(aux))
+}  </code></pre>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;5&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;10&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-7-2.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;15&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-7-3.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;20&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-7-4.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;25&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-7-5.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;30&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-7-6.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;35&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-7-7.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;40&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-7-8.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;45&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-7-9.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;50&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-7-10.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;75&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-7-11.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;100&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-7-12.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;250&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-7-13.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;500&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-7-14.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;1000&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-7-15.png" width="672" /></p>
+<pre class="r"><code>bernMeans </code></pre>
+<pre><code>##  [1] 0.9966000 1.0153000 1.0090000 0.9950000 1.0024400 0.9874333 0.9921143
+##  [8] 0.9955250 0.9945333 1.0069000 0.9969733 1.0016100 0.9975840 0.9997560
+## [15] 0.9979520</code></pre>
+<pre class="r"><code>bernVars</code></pre>
+<pre><code>##  [1] 0.371199640 0.201117027 0.131236904 0.099769770 0.078124971
+##  [6] 0.070220077 0.059659516 0.049084684 0.040399651 0.041101091
+## [11] 0.023836365 0.019583491 0.007843286 0.004063027 0.002021327</code></pre>
 </div>
-<div id="poisson" class="section level4">
+<div id="p-0.85" class="section level5">
+<h5><span class="math inline">\(p = 0.85\)</span></h5>
+<p>Teríamos então <span class="math inline">\(E(\bar{X}) = 0.1765\)</span> e <span class="math inline">\(Var(\bar{X}) = 0.00021\)</span></p>
+<pre class="r"><code>bernMeans &lt;- NULL
+bernVars &lt;- NULL
+plot_list &lt;- NULL
+
+for (size in sampleSizes){
+  aux &lt;- NULL
+  for(i in 1:1000){
+  aux &lt;- c(aux, mean(rgeom(size, 0.85)))
+  }
+  print(c(&quot;Tamanho da amostra:&quot;, size))
+  plot_list &lt;- c(plot_list, hist(aux, main = &quot;Histograma das médias&quot;, xlab = &quot;Média&quot;, ylab = &quot;Freq&quot;, col = &quot;darkgrey&quot;))
+  bernMeans &lt;- c(bernMeans, mean(aux))
+  bernVars  &lt;- c(bernVars, var(aux))
+}  </code></pre>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;5&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;10&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-8-2.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;15&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-8-3.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;20&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-8-4.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;25&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-8-5.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;30&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-8-6.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;35&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-8-7.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;40&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-8-8.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;45&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-8-9.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;50&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-8-10.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;75&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-8-11.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;100&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-8-12.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;250&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-8-13.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;500&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-8-14.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;1000&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-8-15.png" width="672" /></p>
+<pre class="r"><code>bernMeans </code></pre>
+<pre><code>##  [1] 0.1738000 0.1735000 0.1705333 0.1788500 0.1780800 0.1752333 0.1796286
+##  [8] 0.1735500 0.1764889 0.1802000 0.1752800 0.1764600 0.1770400 0.1764920
+## [15] 0.1764600</code></pre>
+<pre class="r"><code>bernVars</code></pre>
+<pre><code>##  [1] 0.0415551151 0.0208085586 0.0134740785 0.0110762538 0.0085008144
+##  [6] 0.0066165621 0.0060718931 0.0047401376 0.0046578114 0.0041040641
+## [11] 0.0028356684 0.0020347031 0.0008311415 0.0004187367 0.0002015059</code></pre>
+</div>
+</div>
+<div id="poisson" class="section level4 tabset tabset-fade">
 <h4>Poisson</h4>
+<p>A distribuição de Poisson tem parâmetros <span class="math inline">\(\lambda\)</span> e apresenta:</p>
+<p><span class="math inline">\(X \sim Poisson(\lambda)\)</span></p>
+<p><span class="math inline">\(E(X) = \lambda\)</span> e <span class="math inline">\(Var(X) = \lambda\)</span></p>
+<div id="para-lambda-4" class="section level5">
+<h5>Para <span class="math inline">\(\lambda = 4\)</span></h5>
+<p>Teríamos então <span class="math inline">\(E(\bar{X}) = 4\)</span> e <span class="math inline">\(Var(\bar{X}) = 0.004\)</span></p>
+<pre class="r"><code>bernMeans &lt;- NULL
+bernVars &lt;- NULL
+plot_list &lt;- NULL
+
+for (size in sampleSizes){
+  aux &lt;- NULL
+  for(i in 1:1000){
+  aux &lt;- c(aux, mean(rpois(size, 4)))
+  }
+  print(c(&quot;Tamanho da amostra:&quot;, size))
+  plot_list &lt;- c(plot_list, hist(aux, main = &quot;Histograma das médias&quot;, xlab = &quot;Média&quot;, ylab = &quot;Freq&quot;, col = &quot;darkgrey&quot;))
+  bernMeans &lt;- c(bernMeans, mean(aux))
+  bernVars  &lt;- c(bernVars, var(aux))
+}  </code></pre>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;5&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;10&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-9-2.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;15&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-9-3.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;20&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-9-4.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;25&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-9-5.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;30&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-9-6.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;35&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-9-7.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;40&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-9-8.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;45&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-9-9.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;50&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-9-10.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;75&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-9-11.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;100&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-9-12.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;250&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-9-13.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;500&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-9-14.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;1000&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-9-15.png" width="672" /></p>
+<pre class="r"><code>bernMeans </code></pre>
+<pre><code>##  [1] 3.951600 4.036200 4.016400 4.023050 3.998400 4.002300 3.999714
+##  [8] 3.968125 3.992667 4.017220 3.998187 3.996290 4.000536 4.000784
+## [15] 3.999484</code></pre>
+<pre class="r"><code>bernVars</code></pre>
+<pre><code>##  [1] 0.766183624 0.376886446 0.257125944 0.210786984 0.158549590
+##  [6] 0.137493314 0.105898470 0.096623733 0.096151015 0.089531003
+## [11] 0.053122901 0.042084621 0.016201963 0.008470992 0.004381471</code></pre>
+</div>
+<div id="para-lambda-6" class="section level5">
+<h5>Para <span class="math inline">\(\lambda = 6\)</span></h5>
+<p>Teríamos então <span class="math inline">\(E(\bar{X}) = 6\)</span> e <span class="math inline">\(Var(\bar{X}) = 0.006\)</span></p>
+<pre class="r"><code>bernMeans &lt;- NULL
+bernVars &lt;- NULL
+plot_list &lt;- NULL
+
+for (size in sampleSizes){
+  aux &lt;- NULL
+  for(i in 1:1000){
+  aux &lt;- c(aux, mean(rpois(size, 6)))
+  }
+  print(c(&quot;Tamanho da amostra:&quot;, size))
+  plot_list &lt;- c(plot_list, hist(aux, main = &quot;Histograma das médias&quot;, xlab = &quot;Média&quot;, ylab = &quot;Freq&quot;, col = &quot;darkgrey&quot;))
+  bernMeans &lt;- c(bernMeans, mean(aux))
+  bernVars  &lt;- c(bernVars, var(aux))
+}  </code></pre>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;5&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;10&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-10-2.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;15&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-10-3.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;20&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-10-4.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;25&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-10-5.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;30&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-10-6.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;35&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-10-7.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;40&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-10-8.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;45&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-10-9.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;50&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-10-10.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;75&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-10-11.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;100&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-10-12.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;250&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-10-13.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;500&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-10-14.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;1000&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-10-15.png" width="672" /></p>
+<pre class="r"><code>bernMeans </code></pre>
+<pre><code>##  [1] 6.001400 5.995800 6.014533 5.994400 6.018480 5.992400 6.009743
+##  [8] 5.994850 5.989333 6.019180 5.999307 5.993470 5.999916 6.001544
+## [15] 5.999074</code></pre>
+<pre class="r"><code>bernVars</code></pre>
+<pre><code>##  [1] 1.214852893 0.596258619 0.382811594 0.323181822 0.220009699
+##  [6] 0.194567919 0.188226364 0.165134862 0.138462215 0.122105833
+## [11] 0.077971535 0.067797857 0.026753194 0.012276428 0.006123344</code></pre>
+</div>
 </div>
 </div>
 <div id="distribuições-contínuas" class="section level3 tabset tabset-fade">
 <h3>Distribuições Contínuas</h3>
-<div id="uniforme" class="section level4">
+<div id="uniforme" class="section level4 tabset tabset-fade">
 <h4>Uniforme</h4>
+<p>A distribuição Uniforme tem parâmetro <span class="math inline">\(a\)</span> e <span class="math inline">\(b\)</span> e apresenta:</p>
+<p><span class="math inline">\(X \sim Uniforme(a,b)\)</span></p>
+<p><span class="math inline">\(E(X) = \frac{1}{2}(a+b)\)</span> e <span class="math inline">\(Var(X) = \frac{1}{12}(b-a)^2\)</span></p>
+<div id="para-a-0-e-b-3" class="section level5">
+<h5>Para <span class="math inline">\(a = 0\)</span> e <span class="math inline">\(b = 3\)</span></h5>
+<p>Teríamos então <span class="math inline">\(E(\bar{X}) = 1.5\)</span> e <span class="math inline">\(Var(\bar{X}) = 0.00075\)</span></p>
+<pre class="r"><code>bernMeans &lt;- NULL
+bernVars &lt;- NULL
+plot_list &lt;- NULL
+
+for (size in sampleSizes){
+  aux &lt;- NULL
+  for(i in 1:1000){
+  aux &lt;- c(aux, mean(runif(size, min = 0, max = 3)))
+  }
+  print(c(&quot;Tamanho da amostra:&quot;, size))
+  plot_list &lt;- c(plot_list, hist(aux, main = &quot;Histograma das médias&quot;, xlab = &quot;Média&quot;, ylab = &quot;Freq&quot;, col = &quot;darkgrey&quot;))
+  bernMeans &lt;- c(bernMeans, mean(aux))
+  bernVars  &lt;- c(bernVars, var(aux))
+}  </code></pre>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;5&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;10&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-11-2.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;15&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-11-3.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;20&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-11-4.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;25&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-11-5.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;30&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-11-6.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;35&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-11-7.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;40&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-11-8.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;45&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-11-9.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;50&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-11-10.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;75&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-11-11.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;100&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-11-12.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;250&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-11-13.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;500&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-11-14.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;1000&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-11-15.png" width="672" /></p>
+<pre class="r"><code>bernMeans </code></pre>
+<pre><code>##  [1] 1.494207 1.502025 1.505927 1.487484 1.495071 1.501843 1.495724
+##  [8] 1.499816 1.496112 1.498852 1.500609 1.502328 1.495596 1.500038
+## [15] 1.499277</code></pre>
+<pre class="r"><code>bernVars</code></pre>
+<pre><code>##  [1] 0.1515767199 0.0767790048 0.0522373068 0.0412926929 0.0340071791
+##  [6] 0.0247740805 0.0209721931 0.0184394466 0.0169654231 0.0153912453
+## [11] 0.0100046763 0.0071951324 0.0028376013 0.0015155186 0.0007451807</code></pre>
 </div>
-<div id="normal" class="section level4">
+<div id="para-a-1-e-b-5" class="section level5">
+<h5>Para <span class="math inline">\(a = 1\)</span> e <span class="math inline">\(b = 5\)</span></h5>
+<p>Teríamos então <span class="math inline">\(E(\bar{X}) = 3\)</span> e <span class="math inline">\(Var(\bar{X}) = 0.0013333\)</span></p>
+<pre class="r"><code>bernMeans &lt;- NULL
+bernVars &lt;- NULL
+plot_list &lt;- NULL
+
+for (size in sampleSizes){
+  aux &lt;- NULL
+  for(i in 1:1000){
+  aux &lt;- c(aux, mean(runif(size, min = 1, max = 5)))
+  }
+  print(c(&quot;Tamanho da amostra:&quot;, size))
+  plot_list &lt;- c(plot_list, hist(aux, main = &quot;Histograma das médias&quot;, xlab = &quot;Média&quot;, ylab = &quot;Freq&quot;, col = &quot;darkgrey&quot;))
+  bernMeans &lt;- c(bernMeans, mean(aux))
+  bernVars  &lt;- c(bernVars, var(aux))
+}  </code></pre>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;5&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;10&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-12-2.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;15&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-12-3.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;20&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-12-4.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;25&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-12-5.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;30&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-12-6.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;35&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-12-7.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;40&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-12-8.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;45&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-12-9.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;50&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-12-10.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;75&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-12-11.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;100&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-12-12.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;250&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-12-13.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;500&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-12-14.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;1000&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-12-15.png" width="672" /></p>
+<pre class="r"><code>bernMeans </code></pre>
+<pre><code>##  [1] 2.986957 2.993084 3.006891 3.025489 2.997583 3.013597 2.992534
+##  [8] 3.005589 2.999645 2.996481 2.988787 3.002547 3.002632 2.999059
+## [15] 2.997870</code></pre>
+<pre class="r"><code>bernVars</code></pre>
+<pre><code>##  [1] 0.247224012 0.131206525 0.093429017 0.063290450 0.055399602
+##  [6] 0.043773049 0.037376310 0.032965964 0.028176402 0.024818119
+## [11] 0.017925822 0.012974157 0.005642141 0.002619154 0.001228268</code></pre>
+</div>
+</div>
+<div id="normal" class="section level4 tabset tabset-fade">
 <h4>Normal</h4>
+<p>A distribuição Normal tem parâmetros <span class="math inline">\(\mu\)</span> e <span class="math inline">\(\sigma^2\)</span> e apresenta:</p>
+<p><span class="math inline">\(X \sim Normal(\mu,\sigma^2)\)</span></p>
+<p><span class="math inline">\(E(X) = \mu\)</span> e <span class="math inline">\(Var(X) = \sigma^2\)</span></p>
+<div id="para-mu-5-e-sigma2-1.5" class="section level5">
+<h5>Para <span class="math inline">\(\mu = 5\)</span> e <span class="math inline">\(\sigma^2 = 1.5\)</span></h5>
+<p>Teríamos então <span class="math inline">\(E(\bar{X}) = 5\)</span> e <span class="math inline">\(Var(\bar{X}) = 0.0015\)</span></p>
+<pre class="r"><code>bernMeans &lt;- NULL
+bernVars &lt;- NULL
+plot_list &lt;- NULL
+
+for (size in sampleSizes){
+  aux &lt;- NULL
+  for(i in 1:1000){
+  aux &lt;- c(aux, mean(rnorm(size, mean = 5, sd = sqrt(1.5))))
+  }
+  print(c(&quot;Tamanho da amostra:&quot;, size))
+  plot_list &lt;- c(plot_list, hist(aux, main = &quot;Histograma das médias&quot;, xlab = &quot;Média&quot;, ylab = &quot;Freq&quot;, col = &quot;darkgrey&quot;))
+  bernMeans &lt;- c(bernMeans, mean(aux))
+  bernVars  &lt;- c(bernVars, var(aux))
+}  </code></pre>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;5&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;10&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-13-2.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;15&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-13-3.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;20&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-13-4.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;25&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-13-5.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;30&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-13-6.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;35&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-13-7.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;40&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-13-8.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;45&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-13-9.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;50&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-13-10.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;75&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-13-11.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;100&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-13-12.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;250&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-13-13.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;500&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-13-14.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;1000&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-13-15.png" width="672" /></p>
+<pre class="r"><code>bernMeans </code></pre>
+<pre><code>##  [1] 5.012159 5.008186 4.995463 4.996419 5.000768 4.986457 4.989866
+##  [8] 4.990796 4.998324 5.004305 4.996992 4.995115 5.000835 5.003252
+## [15] 4.999726</code></pre>
+<pre class="r"><code>bernVars</code></pre>
+<pre><code>##  [1] 0.292189945 0.154377721 0.102229637 0.078754901 0.063269871
+##  [6] 0.051819605 0.044302651 0.037185527 0.034798584 0.029996372
+## [11] 0.020339222 0.014619326 0.006390954 0.003146017 0.001538767</code></pre>
 </div>
-<div id="exponencial" class="section level4">
+<div id="para-mu-110-e-sigma2-20" class="section level5">
+<h5>Para <span class="math inline">\(\mu = 110\)</span> e <span class="math inline">\(\sigma^2 = 20\)</span></h5>
+<p>Teríamos então <span class="math inline">\(E(\bar{X}) = 110\)</span> e <span class="math inline">\(Var(\bar{X}) = 0.02\)</span></p>
+<pre class="r"><code>bernMeans &lt;- NULL
+bernVars &lt;- NULL
+plot_list &lt;- NULL
+
+for (size in sampleSizes){
+  aux &lt;- NULL
+  for(i in 1:1000){
+  aux &lt;- c(aux, mean(rnorm(size, mean = 110, sd = sqrt(20))))
+  }
+  print(c(&quot;Tamanho da amostra:&quot;, size))
+  plot_list &lt;- c(plot_list, hist(aux, main = &quot;Histograma das médias&quot;, xlab = &quot;Média&quot;, ylab = &quot;Freq&quot;, col = &quot;darkgrey&quot;))
+  bernMeans &lt;- c(bernMeans, mean(aux))
+  bernVars  &lt;- c(bernVars, var(aux))
+}  </code></pre>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;5&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;10&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-14-2.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;15&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-14-3.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;20&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-14-4.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;25&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-14-5.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;30&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-14-6.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;35&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-14-7.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;40&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-14-8.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;45&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-14-9.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;50&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-14-10.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;75&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-14-11.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;100&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-14-12.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;250&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-14-13.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;500&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-14-14.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;1000&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-14-15.png" width="672" /></p>
+<pre class="r"><code>bernMeans </code></pre>
+<pre><code>##  [1] 110.0145 110.0139 109.9500 109.9704 110.0047 110.0103 110.0361
+##  [8] 110.0017 109.9509 109.9636 109.9908 109.9990 110.0125 109.9976
+## [15] 109.9959</code></pre>
+<pre class="r"><code>bernVars</code></pre>
+<pre><code>##  [1] 3.96017302 1.90664271 1.36907262 1.05021914 0.80753260 0.68262194
+##  [7] 0.54018570 0.53280766 0.44809694 0.41400838 0.27949858 0.19472864
+## [13] 0.07824895 0.04123145 0.01951922</code></pre>
+</div>
+</div>
+<div id="exponencial" class="section level4 tabset tabset-fade">
 <h4>Exponencial</h4>
+<p>A distribuição Exponencial tem parâmetro <span class="math inline">\(\lambda\)</span> e apresenta:</p>
+<p><span class="math inline">\(X \sim Exp(\lambda)\)</span></p>
+<p><span class="math inline">\(E(X) = \frac{1}{\lambda}\)</span> e <span class="math inline">\(Var(X) = \frac{1}{\lambda^2}\)</span></p>
+<div id="para-lambda-5" class="section level5">
+<h5>Para <span class="math inline">\(\lambda = 5\)</span></h5>
+<p>Teríamos então <span class="math inline">\(E(\bar{X}) = 0.2\)</span> e <span class="math inline">\(Var(\bar{X}) = 0.00004\)</span></p>
+<pre class="r"><code>bernMeans &lt;- NULL
+bernVars &lt;- NULL
+plot_list &lt;- NULL
+
+for (size in sampleSizes){
+  aux &lt;- NULL
+  for(i in 1:1000){
+  aux &lt;- c(aux, mean(rexp(size, rate = 5)))
+  }
+  print(c(&quot;Tamanho da amostra:&quot;, size))
+  plot_list &lt;- c(plot_list, hist(aux, main = &quot;Histograma das médias&quot;, xlab = &quot;Média&quot;, ylab = &quot;Freq&quot;, col = &quot;darkgrey&quot;))
+  bernMeans &lt;- c(bernMeans, mean(aux))
+  bernVars  &lt;- c(bernVars, var(aux))
+}  </code></pre>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;5&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;10&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-15-2.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;15&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-15-3.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;20&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-15-4.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;25&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-15-5.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;30&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-15-6.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;35&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-15-7.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;40&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-15-8.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;45&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-15-9.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;50&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-15-10.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;75&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-15-11.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;100&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-15-12.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;250&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-15-13.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;500&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-15-14.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;1000&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-15-15.png" width="672" /></p>
+<pre class="r"><code>bernMeans </code></pre>
+<pre><code>##  [1] 0.2018918 0.2003672 0.1987805 0.1992258 0.2003440 0.1992638 0.2014282
+##  [8] 0.1995108 0.2000148 0.2004030 0.2002651 0.2005070 0.2008328 0.1995039
+## [15] 0.1998619</code></pre>
+<pre class="r"><code>bernVars</code></pre>
+<pre><code>##  [1] 7.578061e-03 3.878650e-03 2.683503e-03 2.122990e-03 1.514365e-03
+##  [6] 1.122262e-03 1.114330e-03 9.662441e-04 9.232972e-04 8.632907e-04
+## [11] 5.289571e-04 3.923357e-04 1.515218e-04 7.802564e-05 3.942429e-05</code></pre>
 </div>
-<div id="t-student" class="section level4">
+<div id="para-lambda-15" class="section level5">
+<h5>Para <span class="math inline">\(\lambda = 15\)</span></h5>
+<p>Teríamos então <span class="math inline">\(E(\bar{X}) = 0.066667\)</span> e <span class="math inline">\(Var(\bar{X}) = 0.0000004444\)</span></p>
+<pre class="r"><code>bernMeans &lt;- NULL
+bernVars &lt;- NULL
+plot_list &lt;- NULL
+
+for (size in sampleSizes){
+  aux &lt;- NULL
+  for(i in 1:1000){
+  aux &lt;- c(aux, mean(rexp(size, rate = 15)))
+  }
+  print(c(&quot;Tamanho da amostra:&quot;, size))
+  plot_list &lt;- c(plot_list, hist(aux, main = &quot;Histograma das médias&quot;, xlab = &quot;Média&quot;, ylab = &quot;Freq&quot;, col = &quot;darkgrey&quot;))
+  bernMeans &lt;- c(bernMeans, mean(aux))
+  bernVars  &lt;- c(bernVars, var(aux))
+}  </code></pre>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;5&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;10&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-16-2.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;15&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-16-3.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;20&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-16-4.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;25&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-16-5.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;30&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-16-6.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;35&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-16-7.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;40&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-16-8.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;45&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-16-9.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;50&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-16-10.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;75&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-16-11.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;100&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-16-12.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;250&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-16-13.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;500&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-16-14.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;1000&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-16-15.png" width="672" /></p>
+<pre class="r"><code>bernMeans </code></pre>
+<pre><code>##  [1] 0.06624546 0.06651830 0.06653990 0.06622056 0.06606536 0.06658299
+##  [7] 0.06646491 0.06601721 0.06640570 0.06678282 0.06663339 0.06625000
+## [13] 0.06650562 0.06676727 0.06660784</code></pre>
+<pre class="r"><code>bernVars</code></pre>
+<pre><code>##  [1] 8.847811e-04 4.650439e-04 3.024305e-04 2.343712e-04 1.751875e-04
+##  [6] 1.437048e-04 1.299527e-04 1.038790e-04 9.620153e-05 8.663554e-05
+## [11] 5.559282e-05 4.424323e-05 1.976121e-05 8.229342e-06 4.498474e-06</code></pre>
+</div>
+</div>
+<div id="t-student" class="section level4 tabset tabset-fade">
 <h4>t-Student</h4>
+<p>A distribuição t-Student tem parâmetro <span class="math inline">\(\nu = n-1\)</span> e apresenta:</p>
+<p><span class="math inline">\(X \sim Exp(\lambda)\)</span></p>
+<p><span class="math inline">\(E(X) = 0\)</span> e <span class="math inline">\(Var(X) = \frac{\nu}{\nu-2}\)</span></p>
+<div id="para-nu-11" class="section level5">
+<h5>Para <span class="math inline">\(\nu = 11\)</span></h5>
+<p>Teríamos então <span class="math inline">\(E(\bar{X}) = 0\)</span> e <span class="math inline">\(Var(\bar{X}) = 0.001222222\)</span></p>
+<pre class="r"><code>bernMeans &lt;- NULL
+bernVars &lt;- NULL
+plot_list &lt;- NULL
+
+for (size in sampleSizes){
+  aux &lt;- NULL
+  for(i in 1:1000){
+  aux &lt;- c(aux, mean(rt(size, 11, ncp = 0)))
+  }
+  print(c(&quot;Tamanho da amostra:&quot;, size))
+  plot_list &lt;- c(plot_list, hist(aux, main = &quot;Histograma das médias&quot;, xlab = &quot;Média&quot;, ylab = &quot;Freq&quot;, col = &quot;darkgrey&quot;))
+  bernMeans &lt;- c(bernMeans, mean(aux))
+  bernVars  &lt;- c(bernVars, var(aux))
+}  </code></pre>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;5&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;10&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-17-2.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;15&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-17-3.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;20&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-17-4.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;25&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-17-5.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;30&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-17-6.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;35&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-17-7.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;40&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-17-8.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;45&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-17-9.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;50&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-17-10.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;75&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-17-11.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;100&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-17-12.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;250&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-17-13.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;500&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-17-14.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;1000&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-17-15.png" width="672" /></p>
+<pre class="r"><code>bernMeans </code></pre>
+<pre><code>##  [1] -0.0017439580 -0.0134172022  0.0072909756 -0.0005216774  0.0126455500
+##  [6] -0.0007840581  0.0005587114  0.0060014971  0.0071824218  0.0006445780
+## [11] -0.0017609931  0.0011058295 -0.0007424441 -0.0003124871 -0.0011514815</code></pre>
+<pre class="r"><code>bernVars</code></pre>
+<pre><code>##  [1] 0.237697210 0.131386916 0.079306990 0.056664185 0.051568562
+##  [6] 0.039705772 0.038581352 0.031625316 0.026603246 0.024684261
+## [11] 0.016246701 0.012067791 0.004921412 0.002500394 0.001203677</code></pre>
 </div>
-<div id="chi-quadrado" class="section level4">
+<div id="para-nu-25" class="section level5">
+<h5>Para <span class="math inline">\(\nu = 25\)</span></h5>
+<p>Teríamos então <span class="math inline">\(E(\bar{X}) = 0\)</span> e <span class="math inline">\(Var(\bar{X}) = 0.001086957\)</span></p>
+<pre class="r"><code>bernMeans &lt;- NULL
+bernVars &lt;- NULL
+plot_list &lt;- NULL
+
+for (size in sampleSizes){
+  aux &lt;- NULL
+  for(i in 1:1000){
+  aux &lt;- c(aux, mean(rt(size, 25, ncp = 0)))
+  }
+  print(c(&quot;Tamanho da amostra:&quot;, size))
+  plot_list &lt;- c(plot_list, hist(aux, main = &quot;Histograma das médias&quot;, xlab = &quot;Média&quot;, ylab = &quot;Freq&quot;, col = &quot;darkgrey&quot;))
+  bernMeans &lt;- c(bernMeans, mean(aux))
+  bernVars  &lt;- c(bernVars, var(aux))
+}  </code></pre>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;5&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-18-1.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;10&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-18-2.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;15&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-18-3.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;20&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-18-4.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;25&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-18-5.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;30&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-18-6.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;35&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-18-7.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;40&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-18-8.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;45&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-18-9.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;50&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-18-10.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;75&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-18-11.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;100&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-18-12.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;250&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-18-13.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;500&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-18-14.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;1000&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-18-15.png" width="672" /></p>
+<pre class="r"><code>bernMeans </code></pre>
+<pre><code>##  [1]  1.025793e-02 -1.349816e-02  1.060729e-02  1.043436e-02 -3.405620e-04
+##  [6]  1.201327e-02 -4.818592e-03  1.162654e-03 -2.412139e-04  5.175161e-03
+## [11]  2.062289e-03 -1.392122e-03  1.386603e-03 -2.316558e-03 -9.976484e-05</code></pre>
+<pre class="r"><code>bernVars</code></pre>
+<pre><code>##  [1] 0.224105325 0.102148899 0.078315255 0.053114861 0.043584585
+##  [6] 0.037330907 0.031071559 0.029038137 0.024053496 0.020930363
+## [11] 0.014151686 0.010446270 0.004751132 0.002096389 0.001039320</code></pre>
+</div>
+</div>
+<div id="chi-quadrado" class="section level4 tabset tabset-fade">
 <h4>chi-Quadrado</h4>
+<p>A distribuição chi-Quadrado tem parâmetro <span class="math inline">\(k\)</span> e apresenta:</p>
+<p><span class="math inline">\(X \sim \chi^2(K)\)</span></p>
+<p><span class="math inline">\(E(X) = K\)</span> e <span class="math inline">\(Var(X) = 2K\)</span></p>
+<div id="para-k-3" class="section level5">
+<h5>Para <span class="math inline">\(K = 3\)</span></h5>
+<p>Teríamos então <span class="math inline">\(E(\bar{X}) = 3\)</span> e <span class="math inline">\(Var(\bar{X}) = 0.006\)</span></p>
+<pre class="r"><code>bernMeans &lt;- NULL
+bernVars &lt;- NULL
+plot_list &lt;- NULL
+
+for (size in sampleSizes){
+  aux &lt;- NULL
+  for(i in 1:1000){
+  aux &lt;- c(aux, mean(rchisq(size, 3, ncp=0)))
+  }
+  print(c(&quot;Tamanho da amostra:&quot;, size))
+  plot_list &lt;- c(plot_list, hist(aux, main = &quot;Histograma das médias&quot;, xlab = &quot;Média&quot;, ylab = &quot;Freq&quot;, col = &quot;darkgrey&quot;))
+  bernMeans &lt;- c(bernMeans, mean(aux))
+  bernVars  &lt;- c(bernVars, var(aux))
+}  </code></pre>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;5&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;10&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-19-2.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;15&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-19-3.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;20&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-19-4.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;25&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-19-5.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;30&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-19-6.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;35&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-19-7.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;40&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-19-8.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;45&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-19-9.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;50&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-19-10.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;75&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-19-11.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;100&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-19-12.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;250&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-19-13.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;500&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-19-14.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;1000&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-19-15.png" width="672" /></p>
+<pre class="r"><code>bernMeans </code></pre>
+<pre><code>##  [1] 3.033322 2.967039 2.970671 2.986953 3.006405 3.007723 2.993597
+##  [8] 3.009898 2.999745 3.001336 2.979707 2.998662 2.999226 3.000733
+## [15] 3.000914</code></pre>
+<pre class="r"><code>bernVars</code></pre>
+<pre><code>##  [1] 1.206859586 0.641295687 0.391037242 0.302389368 0.245519767
+##  [6] 0.187621880 0.171399375 0.147315908 0.134966998 0.119605998
+## [11] 0.076980189 0.061015908 0.023595783 0.011654887 0.005819351</code></pre>
 </div>
-<div id="fisher-snedecor" class="section level4">
+<div id="para-k-10" class="section level5">
+<h5>Para <span class="math inline">\(K = 10\)</span></h5>
+<p>Teríamos então <span class="math inline">\(E(\bar{X}) = 10\)</span> e <span class="math inline">\(Var(\bar{X}) = 0.02\)</span></p>
+<pre class="r"><code>bernMeans &lt;- NULL
+bernVars &lt;- NULL
+plot_list &lt;- NULL
+
+for (size in sampleSizes){
+  aux &lt;- NULL
+  for(i in 1:1000){
+  aux &lt;- c(aux, mean(rchisq(size, 10, ncp=0)))
+  }
+  print(c(&quot;Tamanho da amostra:&quot;, size))
+  plot_list &lt;- c(plot_list, hist(aux, main = &quot;Histograma das médias&quot;, xlab = &quot;Média&quot;, ylab = &quot;Freq&quot;, col = &quot;darkgrey&quot;))
+  bernMeans &lt;- c(bernMeans, mean(aux))
+  bernVars  &lt;- c(bernVars, var(aux))
+}  </code></pre>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;5&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;10&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-20-2.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;15&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-20-3.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;20&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-20-4.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;25&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-20-5.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;30&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-20-6.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;35&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-20-7.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;40&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-20-8.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;45&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-20-9.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;50&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-20-10.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;75&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-20-11.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;100&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-20-12.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;250&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-20-13.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;500&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-20-14.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;1000&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-20-15.png" width="672" /></p>
+<pre class="r"><code>bernMeans </code></pre>
+<pre><code>##  [1] 10.066210  9.931266  9.963106 10.005678  9.998183 10.016521 10.001056
+##  [8] 10.012593  9.988467  9.976665 10.019583  9.977067 10.003300 10.005748
+## [15]  9.999220</code></pre>
+<pre class="r"><code>bernVars</code></pre>
+<pre><code>##  [1] 3.98005305 1.95592930 1.32506708 1.00929008 0.86875165 0.64508416
+##  [7] 0.60706540 0.48043372 0.44014694 0.40360395 0.26355973 0.18895019
+## [13] 0.08188297 0.04115629 0.02130200</code></pre>
+</div>
+</div>
+<div id="fisher-snedecor" class="section level4 tabset tabset-fade">
 <h4>Fisher-Snedecor</h4>
+<p>A distribuição F de Fisher-Snedecor tem parâmetros <span class="math inline">\(d_{1}\)</span> e <span class="math inline">\(d_{2}\)</span> e apresenta:</p>
+<p><span class="math inline">\(X \sim F(d_{1},d_{2})\)</span></p>
+<p><span class="math inline">\(E(X) = \frac{d_{2}}{d_{2}-2}\)</span> e <span class="math inline">\(Var(X) = \frac{2d_{2}^2(d_{1}+d_{2}-2)}{d_{1}(d_{2}-2)^2(d_{2}-4)}\)</span></p>
+<div id="para-d_1-9-e-d_2-5" class="section level5">
+<h5>Para $d_{1}= 9 $ e <span class="math inline">\(d_{2}= 5\)</span></h5>
+<p>Teríamos então <span class="math inline">\(E(\bar{X}) = 1.66667\)</span> e <span class="math inline">\(Var(\bar{X}) = 0.007407407\)</span></p>
+<pre class="r"><code>bernMeans &lt;- NULL
+bernVars &lt;- NULL
+plot_list &lt;- NULL
+
+for (size in sampleSizes){
+  aux &lt;- NULL
+  for(i in 1:1000){
+  aux &lt;- c(aux, mean(rf(size, 9, 5, ncp = 0)))
+  }
+  print(c(&quot;Tamanho da amostra:&quot;, size))
+  plot_list &lt;- c(plot_list, hist(aux, main = &quot;Histograma das médias&quot;, xlab = &quot;Média&quot;, ylab = &quot;Freq&quot;, col = &quot;darkgrey&quot;))
+  bernMeans &lt;- c(bernMeans, mean(aux))
+  bernVars  &lt;- c(bernVars, var(aux))
+}  </code></pre>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;5&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;10&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-21-2.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;15&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-21-3.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;20&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-21-4.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;25&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-21-5.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;30&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-21-6.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;35&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-21-7.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;40&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-21-8.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;45&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-21-9.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;50&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-21-10.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;75&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-21-11.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;100&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-21-12.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;250&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-21-13.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;500&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-21-14.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;1000&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-21-15.png" width="672" /></p>
+<pre class="r"><code>bernMeans </code></pre>
+<pre><code>##  [1] 1.698100 1.667859 1.680818 1.680908 1.668103 1.637965 1.656275
+##  [8] 1.670610 1.656571 1.672677 1.664825 1.665331 1.671088 1.672144
+## [15] 1.672673</code></pre>
+<pre class="r"><code>bernVars</code></pre>
+<pre><code>##  [1] 1.90935202 0.60691002 0.95626891 0.30777442 0.33690034 0.19204091
+##  [7] 0.18546055 0.13827154 0.13127244 0.13941269 0.13029906 0.05927885
+## [13] 0.02735963 0.01320122 0.01248295</code></pre>
+</div>
+<div id="para-d_1-15-e-d_2-6" class="section level5">
+<h5>Para $d_{1}= 15 $ e <span class="math inline">\(d_{2}= 6\)</span></h5>
+<p>Teríamos então <span class="math inline">\(E(\bar{X}) = 1.5\)</span> e <span class="math inline">\(Var(\bar{X}) = 0.00285\)</span></p>
+<pre class="r"><code>bernMeans &lt;- NULL
+bernVars &lt;- NULL
+plot_list &lt;- NULL
+
+for (size in sampleSizes){
+  aux &lt;- NULL
+  for(i in 1:1000){
+  aux &lt;- c(aux, mean(rf(size, 15, 6, ncp = 0)))
+  }
+  print(c(&quot;Tamanho da amostra:&quot;, size))
+  plot_list &lt;- c(plot_list, hist(aux, main = &quot;Histograma das médias&quot;, xlab = &quot;Média&quot;, ylab = &quot;Freq&quot;, col = &quot;darkgrey&quot;))
+  bernMeans &lt;- c(bernMeans, mean(aux))
+  bernVars  &lt;- c(bernVars, var(aux))
+}  </code></pre>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;5&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-22-1.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;10&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-22-2.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;15&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-22-3.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;20&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-22-4.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;25&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-22-5.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;30&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-22-6.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;35&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-22-7.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;40&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-22-8.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;45&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-22-9.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;50&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-22-10.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;75&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-22-11.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;100&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-22-12.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;250&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-22-13.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;500&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-22-14.png" width="672" /></p>
+<pre><code>## [1] &quot;Tamanho da amostra:&quot; &quot;1000&quot;</code></pre>
+<p><img src="tcl_files/figure-html/unnamed-chunk-22-15.png" width="672" /></p>
+<pre class="r"><code>bernMeans </code></pre>
+<pre><code>##  [1] 1.507157 1.531695 1.497356 1.513436 1.494917 1.504334 1.498012
+##  [8] 1.481726 1.510411 1.493731 1.483289 1.487517 1.503494 1.497783
+## [15] 1.499460</code></pre>
+<pre class="r"><code>bernVars</code></pre>
+<pre><code>##  [1] 0.589291441 0.254736805 0.170782537 0.130996972 0.101010662
+##  [6] 0.086794131 0.083632401 0.062250167 0.059157830 0.048454722
+## [11] 0.028934312 0.026769732 0.011570745 0.005192215 0.002705300</code></pre>
+</div>
 </div>
 </div>
 <div id="conclusão" class="section level3">
